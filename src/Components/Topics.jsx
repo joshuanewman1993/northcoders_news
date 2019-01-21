@@ -16,9 +16,7 @@ class Topics extends Component {
                         topics.map(topic => <li key={topic.slug}><Link to={topic.slug}>{topic.slug}</Link></li>)
                     }
                 </ul>
-                <Router>
-                    <ArticlesByTopic path=':slug/articles' />
-                </Router>
+
             </div>
         );
     }

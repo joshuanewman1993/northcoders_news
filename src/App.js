@@ -18,6 +18,7 @@ class App extends Component {
         <Router>
           <Topics path="/topics" />
           <ArticlesByTopic path='/topics/:slug' />
+          <ArticlesByID path='/topics/:slug/articles' />
           <Articles path='/articles' />
           <ArticlesByID path='/articles/:article_id' />
           <Users path='/users' />
