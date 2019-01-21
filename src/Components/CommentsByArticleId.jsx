@@ -15,6 +15,11 @@ class CommentsByArticleId extends Component {
                 <p>Comment ID: {comment_id}</p>
                 <p>Time & Date: {created_at}</p>
                 <p>Votes: {votes}</p>
+                <div>
+                    <h1>Add Comment</h1>
+                    <input></input>
+                    <button>Submit Comment</button>
+                </div>
             </div>
         );
     }

@@ -13,7 +13,7 @@ class ArticlesByTopic extends Component {
                 {
                     articles.map(article => {
                         const link = `/articles/${article.article_id}`
-                        return <li>{article.title}<Link to={link}>{article.article_id}</Link></li>
+                        return <li><Link to={link}>{article.title}</Link></li>
                     })
                 }
             </ul>
