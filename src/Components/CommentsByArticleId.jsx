@@ -6,12 +6,15 @@ class CommentsByArticleId extends Component {
         comments: []
     }
     render() {
-        console.log('here', this.state.comments)
-        const { comments } = this.state.comments
+        const { author, body, comment_id, created_at, votes } = this.state.comments
         return (
             <div>
                 <h1>Comments</h1>
-
+                <p>Author: {author}</p>
+                <p>Body: {body}</p>
+                <p>Comment ID: {comment_id}</p>
+                <p>Time & Date: {created_at}</p>
+                <p>Votes: {votes}</p>
             </div>
         );
     }
