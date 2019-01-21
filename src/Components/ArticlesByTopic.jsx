@@ -6,10 +6,15 @@ class ArticlesByTopic extends Component {
         articles: []
     }
     render() {
+        const articles = this.state.articles
         return (
-            <div>
-                <h1>Articles by topic here...</h1>
-            </div>
+            <ul>
+                {
+                    articles.map(article => {
+                        return <li>{article.title}</li>
+                    })
+                }
+            </ul>
         );
     }
     componentDidMount() {
@@ -19,9 +24,10 @@ class ArticlesByTopic extends Component {
         const { slug } = this.props
         api.fetchArticlesByTopic(slug)
             .then(articles => {
+                console.log(articles)
                 this.setState(() => ({
-                    articles
-                }), console.log('here', this.state))
+                    articles: articles
+                }))
             })
             .catch(err => console.log(err))
     }
