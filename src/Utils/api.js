@@ -18,7 +18,6 @@ export const fetchArticlesByTopic = async (slug) => {
 }
 
 
-
 // export const fetchArticles = async (slug) => {
 //     const URL = slug
 //         ? `${BASE_URL}/topic/article`
