@@ -11,9 +11,9 @@ class Topics extends Component {
         const { topics } = this.state
         return (
             <div>
-                <ul>
+                <ul className='topics'>
                     {
-                        topics.map(topic => <li key={topic.slug}><Link to={topic.slug}>{topic.slug}</Link></li>)
+                        topics.map(topic => <li className='listItem' key={topic.slug}><Link to={topic.slug}> <p>{topic.slug}</p></Link></li>)
                     }
                 </ul>
 

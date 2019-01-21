@@ -1,3 +1,64 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 .App {
   text-align: center;
+  background-image: url('./images/background.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+.header {
+  font-size: 2rem;
+}
+
+.navbar {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center
+}
+
+.nav {
+  color: white;
+  text-decoration: none;
+  font-size: 2rem;
+  padding: 1rem;
+  transition: 1s;
+}
+
+.nav:hover {
+  transform: scale(1.5)
+}
+
+.topics {
+    background-color: white;
+    width: 100%;
+    margin: auto;
+    
+}
+
+.listItem {
+  color: white;
+  border: solid 1px;
+  border-radius: 10px;
+  transition: 1s;
+  width: 50%;
+  margin: 0 auto;
+  list-style: none; 
+  height: 2rem;
+  padding: 3rem;
+  font-size: 2rem;
+  text-decoration: none;
+
+
+}
+
+.listItem:hover{
+transform: scale(1.1);
+background-color:  rgba(59, 59, 59, 0.966);
 }
