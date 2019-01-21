@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import { Link, Router } from '@reach/router'
-import * as api from '../Utils/api'
-import ArticlesByID from './ArticlesById';
+// import { Link } from '@reach/router'
 
-class Articles extends Component {
+import * as api from '../Utils/api'
+
+class ArticlesByID extends Component {
     state = {
         articles: []
     }
@@ -11,11 +11,7 @@ class Articles extends Component {
         const { articles } = this.state
         return (
             <div>
-                <ul>
-                    {
-                        articles.map(article => <li key={article.article_id}><Link to={`${article.article_id}`}>{article.title}</Link></li>)
-                    }
-                </ul>
+                <h1>ARTICLE BY ID</h1>
 
             </div>
         );
@@ -34,4 +30,4 @@ class Articles extends Component {
     }
 }
 
-export default Articles;
+export default ArticlesByID;

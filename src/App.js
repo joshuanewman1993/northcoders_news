@@ -7,6 +7,7 @@ import Topics from './Components/Topics'
 import Articles from './Components/Articles';
 import Users from './Components/Users';
 import ArticlesByTopic from './Components/ArticlesByTopic';
+import ArticlesByID from './Components/ArticlesById';
 
 class App extends Component {
   render() {
@@ -18,6 +19,7 @@ class App extends Component {
           <Topics path="/topics" />
           <ArticlesByTopic path='/topics/:slug' />
           <Articles path='/articles' />
+          <ArticlesByID path='/articles/:article_id' />
           <Users path='/users' />
         </Router>
       </div >
