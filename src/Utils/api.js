@@ -1,5 +1,4 @@
 import axios from 'axios'
-import Topics from '../Components/Topics';
 
 const BASE_URL = `https://north-coders-knews.herokuapp.com/api`
 export const fetchTopics = async () => {
@@ -17,6 +16,16 @@ export const fetchArticlesByTopic = async (slug) => {
     return data.article
 }
 
+export const fetchArticlesById = async (article_id) => {
+    const { data } = await axios.get(`${BASE_URL}/articles/${article_id}`)
+    return data.articles
+}
+
+export const fetchCommentsByArticleId = async (article_id) => {
+    console.log(article_id)
+    const { data } = await axios.get(`${BASE_URL}/articles/${article_id}/comments`)
+    return data.comments
+}
 
 // export const fetchArticles = async (slug) => {
 //     const URL = slug
