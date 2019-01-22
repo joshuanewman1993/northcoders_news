@@ -72,6 +72,7 @@ class CommentsByArticleId extends Component {
     };
 
     addComment = async (article_id) => {
+        const newComment = { author: this.state.username, body: this.state.body, created_at: Date.now(), votes: 3 }
         const BASE_URL = `https://north-coders-knews.herokuapp.com/api`
         fetch(`${BASE_URL}/articles/${article_id}/comments`, {
             method: 'POST',
@@ -83,8 +84,10 @@ class CommentsByArticleId extends Component {
                 username: this.state.username,
                 body: this.state.body
             })
+            // }).then(newComment => {
+            //     this.setState({ comments: [...this.state.comments, newComment] })
         })
-
+        this.setState({ comments: [...this.state.comments, newComment] })
     }
 
 

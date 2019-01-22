@@ -6,8 +6,8 @@ export const fetchTopics = async () => {
     return data;
 }
 
-export const fetchArticles = async () => {
-    const { data } = await axios.get(`${BASE_URL}/articles`)
+export const fetchArticles = async (page) => {
+    const { data } = await axios.get(`${BASE_URL}/articles?page=${page}`)
     return data.articles;
 }
 
@@ -26,9 +26,9 @@ export const fetchCommentsByArticleId = async (article_id) => {
     return data.comments;
 }
 
-export const fetchUsers = async () => {
-    const { data } = await axios.get(`${BASE_URL}/users`)
-    return data.users;
+export const fetchUsers = async (username) => {
+    const { data } = await axios.get(`${BASE_URL}/users/${username}`)
+    return data
 }
 
 // export const fetchArticles = async (slug) => {
