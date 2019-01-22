@@ -20,7 +20,7 @@ class CommentsByArticleId extends Component {
                             <p>Comment ID: {comment.comment_id}</p>
                             <p>Time & Date: {comment.created_at}</p>
                             <p>Votes: {comment.votes}</p>
-                            <button>Delete Comment</button>
+                            <button onClick={() => this.handleDelete(comment.comment_id)} >Delete Comment</button>
                             <button>Vote Up</button>
                             <button>Vote Down</button>
 
@@ -38,6 +38,21 @@ class CommentsByArticleId extends Component {
         );
     }
 
+    handleDelete(comment_id) {
+        const { article_id } = this.props
+        const BASE_URL = `https://north-coders-knews.herokuapp.com/api`
+        fetch(`${BASE_URL}/articles/${article_id}/comments/${comment_id}`, {
+            method: 'DELETE'
+        }).then(res => {
+            return res.data
+        }).then(() => this.setState(prevState => ({
+            comments: prevState.comments.filter(comment => comment.comment_id !== comment_id)
+        })))
+            .catch((err) => {
+                console.log(err);
+            })
+    }
+
     handleChange = (event) => {
         const { id } = event.target
         this.setState({
@@ -47,7 +62,6 @@ class CommentsByArticleId extends Component {
 
 
     handleSubmit = (event) => {
-        console.log(this.state.commentToAdd)
         const { article_id } = this.props
         event.preventDefault();
         this.addComment(article_id);

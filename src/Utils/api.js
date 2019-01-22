@@ -31,19 +31,6 @@ export const fetchUsers = async () => {
     return data.users;
 }
 
-export const addComment = async (article_id) => {
-    console.log('here')
-    fetch(`${BASE_URL}/articles/${article_id}/comments`, {
-        method: 'POST',
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-            commentToAdd: this.state.commmentToAdd
-        }).then(() => console.log('i got here'))
-    })
-}
 // export const fetchArticles = async (slug) => {
 //     const URL = slug
 //         ? `${BASE_URL}/topic/article`
