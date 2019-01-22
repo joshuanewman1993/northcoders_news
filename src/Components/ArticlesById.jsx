@@ -1,14 +1,19 @@
 import React, { Component } from 'react';
 import * as api from '../Utils/api'
 import CommentsByArticleId from './CommentsByArticleId';
+import { Redirect } from '@reach/router'
 
 class ArticlesByID extends Component {
     state = {
-        articles: [],
-        hidden: true
+        article: [],
+        hidden: true,
+        toDashboard: false
     }
     render() {
-        const { article_id, author, title, body, topic, votes } = this.state.articles
+        if (this.state.toDashboard === true) {
+            return <Redirect to='/articles/deleted' />
+        }
+        const { article_id, author, title, body, topic, votes } = this.state.article
         return (
             <div>
                 <h1>Articles by ID</h1>
@@ -19,6 +24,7 @@ class ArticlesByID extends Component {
                 <p>Topic : {topic}</p>
                 <p>Votes : {votes}</p>
                 <button type='submit' onClick={this.showComments}>View Comments</button>
+                <button type='submit' onClick={this.deleteArticle}>Delete Article</button>
                 {
                     !this.state.hidden && <CommentsByArticleId article_id={article_id} />
                 }
@@ -31,9 +37,9 @@ class ArticlesByID extends Component {
     fetchArticlesById = () => {
         const { article_id } = this.props
         api.fetchArticlesById(article_id)
-            .then(articles => {
+            .then(article => {
                 this.setState(() => ({
-                    articles: articles
+                    article: article
                 }))
             })
             .catch(err => console.log(err))
@@ -43,6 +49,23 @@ class ArticlesByID extends Component {
             hidden: !state.hidden
         }))
     }
+    deleteArticle = () => {
+        const { toDashboard } = this.state
+        const { article_id } = this.state.article
+        const { article } = this.state
+        const BASE_URL = `https://north-coders-knews.herokuapp.com/api`
+        fetch(`${BASE_URL}/articles/${article_id}`, {
+            method: 'DELETE'
+        }).then(res => {
+            return res.data
+        }).then(this.setState({
+            toDashboard: !toDashboard
+        }))
+            .catch((err) => {
+                console.log(err);
+            })
+    }
+
 }
 
 export default ArticlesByID;

@@ -10,6 +10,7 @@ import ArticlesByTopic from './Components/ArticlesByTopic';
 import ArticlesByID from './Components/ArticlesById';
 import Login from './Components/Login';
 import * as api from './Utils/api'
+import DeletedArticle from './Components/DeletedArticle';
 
 class App extends Component {
   state = {
@@ -27,6 +28,7 @@ class App extends Component {
             <ArticlesByTopic path='/topics/:slug' />
             <Articles path='/articles' />
             <ArticlesByID path='/articles/:article_id' />
+            <DeletedArticle path='/articles/deleted' />
             <Users path='/users' />
           </Router>
         </Login>
@@ -34,10 +36,8 @@ class App extends Component {
     );
   }
   componentDidMount() {
-    console.log(this.state.user)
     const storedUser = localStorage.getItem('user')
     const parsedUser = JSON.parse(storedUser)
-    console.log(parsedUser)
     if (this.state.user !== parsedUser) {
       this.setState(({
         user: parsedUser

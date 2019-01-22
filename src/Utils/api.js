@@ -30,6 +30,10 @@ export const fetchUsers = async (username) => {
     const { data } = await axios.get(`${BASE_URL}/users/${username}`)
     return data
 }
+export const handleDelete = async() = {
+    const { data } = await axios.get(`${BASE_URL}/users/${username}`)
+    return data
+}
 
 // export const fetchArticles = async (slug) => {
 //     const URL = slug

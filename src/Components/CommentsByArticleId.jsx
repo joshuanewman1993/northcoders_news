@@ -5,7 +5,8 @@ class CommentsByArticleId extends Component {
     state = {
         comments: [],
         username: '',
-        body: ''
+        body: '',
+        inc_votes: 0
     }
     render() {
         const { author, body, comment_id, created_at, votes } = this.state.comments
@@ -21,8 +22,8 @@ class CommentsByArticleId extends Component {
                             <p>Time & Date: {comment.created_at}</p>
                             <p>Votes: {comment.votes}</p>
                             <button onClick={() => this.handleDelete(comment.comment_id)} >Delete Comment</button>
-                            <button onClick={() => this.increaseVote}>Vote Up</button>
-                            <button>Vote Down</button>
+                            <button type="submit" onClick={() => this.handleVote(1)}>Vote Up</button>
+                            <button type="submit" onClick={() => this.handleVote(-1)}>Vote Down</button>
 
                         </li>)
                     }
@@ -104,6 +105,7 @@ class CommentsByArticleId extends Component {
             })
             .catch(err => console.log(err))
     }
+
 }
 
 export default CommentsByArticleId;
