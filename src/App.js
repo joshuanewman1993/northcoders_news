@@ -33,6 +33,17 @@ class App extends Component {
       </div >
     );
   }
+  componentDidMount() {
+    console.log(this.state.user)
+    const storedUser = localStorage.getItem('user')
+    const parsedUser = JSON.parse(storedUser)
+    console.log(parsedUser)
+    if (this.state.user !== parsedUser) {
+      this.setState(({
+        user: parsedUser
+      }))
+    }
+  }
 
   login = (username) => {
     api.fetchUsers(username)
@@ -40,6 +51,7 @@ class App extends Component {
         this.setState({
           user: user
         })
+        localStorage.setItem('user', JSON.stringify(user))
       })
   }
 }

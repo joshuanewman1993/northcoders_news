@@ -7,7 +7,8 @@ class Login extends Component {
     render() {
         const { username } = this.state;
         const { user } = this.props;
-        return user.username ?
+        console.log(user, 'user')
+        return user ?
             <> {this.props.children}</>
             // <h1>Hello</h1>
             : (
