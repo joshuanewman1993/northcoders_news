@@ -18,7 +18,7 @@ class ArticlesByID extends Component {
                 <p>Body : {body}</p>
                 <p>Topic : {topic}</p>
                 <p>Votes : {votes}</p>
-                <button Type='submit' onClick={this.showComments}>View Comments</button>
+                <button type='submit' onClick={this.showComments}>View Comments</button>
                 {
                     !this.state.hidden && <CommentsByArticleId article_id={article_id} />
                 }

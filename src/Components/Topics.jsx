@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Link, Router } from '@reach/router'
 import * as api from '../Utils/api'
-import ArticlesByTopic from './ArticlesByTopic';
 
 class Topics extends Component {
     state = {
