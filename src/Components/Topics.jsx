@@ -9,7 +9,7 @@ class Topics extends Component {
     render() {
         const { topics } = this.state
         return (
-            <div>
+            <div className='topicsDiv'>
                 <ul className='topics'>
                     {
                         topics.map(topic => <li className='listItem' key={topic.slug}><Link to={topic.slug}> <p>{topic.slug}</p></Link></li>)

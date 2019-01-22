@@ -10,7 +10,7 @@ class Articles extends Component {
     render() {
         const { articles, page } = this.state
         return (
-            <div>
+            <div className='articles'>
                 <ul>
                     {
                         articles.map(article => <li key={article.article_id}><Link to={`${article.article_id}`}>{article.title}</Link></li>)
