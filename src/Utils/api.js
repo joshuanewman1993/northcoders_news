@@ -30,11 +30,24 @@ export const fetchUsers = async (username) => {
     const { data } = await axios.get(`${BASE_URL}/users/${username}`)
     return data
 }
-export const handleDelete = async() = {
-    const { data } = await axios.get(`${BASE_URL}/users/${username}`)
+
+export const handleDelete = async (article_id, comment_id) => {
+    const { data } = await axios.delete(`${BASE_URL}/articles/${article_id}/comments/${comment_id}`)
     return data
 }
+export const addComment = async (article_id, username, body) => {
+    const { data } = await axios.post(`${BASE_URL}/articles/${article_id}/comments`, {
+        body: JSON.stringify({
+            username: username,
+            body: body
+        })
+    })
+}
 
+export const deleteArticle = async (article_id) => {
+    const { data } = await axios.delete(`${BASE_URL}/articles/${article_id}`)
+    return data;
+}
 // export const fetchArticles = async (slug) => {
 //     const URL = slug
 //         ? `${BASE_URL}/topic/article`

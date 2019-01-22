@@ -41,14 +41,10 @@ class CommentsByArticleId extends Component {
 
     handleDelete(comment_id) {
         const { article_id } = this.props
-        const BASE_URL = `https://north-coders-knews.herokuapp.com/api`
-        fetch(`${BASE_URL}/articles/${article_id}/comments/${comment_id}`, {
-            method: 'DELETE'
-        }).then(res => {
-            return res.data
-        }).then(() => this.setState(prevState => ({
-            comments: prevState.comments.filter(comment => comment.comment_id !== comment_id)
-        })))
+        api.handleDelete(article_id, comment_id)
+            .then(() => this.setState(prevState => ({
+                comments: prevState.comments.filter(comment => comment.comment_id !== comment_id)
+            })))
             .catch((err) => {
                 console.log(err);
             })
@@ -74,21 +70,10 @@ class CommentsByArticleId extends Component {
 
     addComment = async (article_id) => {
         const newComment = { author: this.state.username, body: this.state.body, created_at: Date.now(), votes: 0 }
-        const BASE_URL = `https://north-coders-knews.herokuapp.com/api`
-        fetch(`${BASE_URL}/articles/${article_id}/comments`, {
-            method: 'POST',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                username: this.state.username,
-                body: this.state.body
-            })
-            // }).then(newComment => {
-            //     this.setState({ comments: [...this.state.comments, newComment] })
-        })
-        this.setState({ comments: [...this.state.comments, newComment] })
+        const { username, body } = this.state
+        api.addComment(article_id.username, body)
+            .then(this.setState({ comments: [...this.state.comments, newComment] })
+            )
     }
 
 

@@ -52,20 +52,15 @@ class ArticlesByID extends Component {
     deleteArticle = () => {
         const { toDashboard } = this.state
         const { article_id } = this.state.article
-        const { article } = this.state
-        const BASE_URL = `https://north-coders-knews.herokuapp.com/api`
-        fetch(`${BASE_URL}/articles/${article_id}`, {
-            method: 'DELETE'
-        }).then(res => {
-            return res.data
-        }).then(this.setState({
-            toDashboard: !toDashboard
-        }))
+        api.deleteArticle(article_id)
+            .then(this.setState({
+                toDashboard: !toDashboard
+            }))
             .catch((err) => {
                 console.log(err);
             })
-    }
 
+    }
 }
 
 export default ArticlesByID;
