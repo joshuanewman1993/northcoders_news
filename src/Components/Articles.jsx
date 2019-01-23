@@ -17,14 +17,12 @@ class Articles extends Component {
                     }
                 </ul>
 
-                <button onClick={() => this.updatePageNumber(+1)} >Next</button>
-                <button onClick={() => this.updatePageNumber(-1)} disabled={page === 1}>Previous</button>
-
             </div>
         );
     }
     componentDidMount() {
         this.fetchArticles();
+        // window.addEventListener('scroll', handleScroll)
     }
     componentDidUpdate(prevProps, prevState) {
         const pageUpdated = prevState.page !== this.state.page
@@ -44,14 +42,26 @@ class Articles extends Component {
             })
             .catch(err => console.log(err))
     }
-    updatePageNumber = (direction) => {
-        this.setState(({ page }) => ({
-            page: page + direction
-        }))
-    }
-    resetPageNumber = () => {
-        //this will reset page back to zero
-    }
+
+    // updatePageNumber = (direction) => {
+    //     this.setState(({ page }) => ({
+    //         page: page + direction
+    //     }))
+    // }
+    // resetPageNumber = () => {
+    //     //this will reset page back to zero
+    // }
+    // handleScroll = throttle(() => {
+    //     const distanceFromTop = window.scrollY
+    //     const heightOfScreen = window.innerHeight
+    //     const documentHeight = document.body.scrollHeight;
+    //     if (distanceFromTop + heightOfScreen > documentHeight - 100) {
+    //         //npm i lodash throttle
+    //         this.setState(({ page }) => ({
+    //             page: page + 1
+    //         }))
+    //     }
+    // }, 3000)
 }
 
 export default Articles;

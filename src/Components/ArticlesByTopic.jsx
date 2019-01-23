@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import * as api from '../Utils/api'
-import { Link } from '@reach/router'
+import { Link, Router } from '@reach/router'
+import AddArticle from './AddArticle';
+
 
 class ArticlesByTopic extends Component {
     state = {
@@ -11,12 +13,18 @@ class ArticlesByTopic extends Component {
         return (
             <ul>
                 {
+
                     articles.map(article => {
                         const link = `/articles/${article.article_id}`
                         return <li><Link to={link}>{article.title}</Link></li>
                     })
                 }
-            </ul>
+                <Link to='/add-article'>Add Article</Link>
+                <Router>
+                    <AddArticle path='add-article' />
+                </Router>
+            </ul >
+
         );
     }
     componentDidMount() {

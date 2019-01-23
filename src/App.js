@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import { Router } from '@reach/router'
+import { Router, navigate } from '@reach/router'
 import Header from './Components/Header';
 import Nav from './Components/Nav';
 import Topics from './Components/Topics'
@@ -12,11 +12,12 @@ import Login from './Components/Login';
 import * as api from './Utils/api'
 import DeletedArticle from './Components/DeletedArticle';
 import Logout from './Components/Logout';
+import AddArticle from './Components/AddArticle';
 
 
 class App extends Component {
   state = {
-    user: {}
+    user: {},
   }
   render() {
     const { user } = this.state
@@ -30,6 +31,7 @@ class App extends Component {
             <Topics path='/topics/*' />
             <ArticlesByTopic path='/topics/:slug/articles' />
             <Articles path='/articles' />
+            <AddArticle path='/add-article' />
             <ArticlesByID path='/articles/:article_id' />
             <DeletedArticle path='/articles/deleted' />
             <Users path='/users' />
@@ -58,10 +60,14 @@ class App extends Component {
       })
   }
 
-  logOut = () => {
+  logOut = (event) => {
+    console.log(event)
     localStorage.clear()
     this.setState({
       user: {}
+    }, () => {
+      // navigate here...
+      navigate('/')
     })
   }
 }

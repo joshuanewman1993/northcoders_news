@@ -51,10 +51,8 @@ export const deleteArticle = async (article_id) => {
 
 export const addTopic = async (description, slug) => {
     const { data } = await axios.post(`${BASE_URL}/topics`, {
-        body: JSON.stringify({
-            description: description,
-            slug: slug
-        })
+        slug: slug,
+        description: description
     })
 }
 
