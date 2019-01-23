@@ -2,12 +2,13 @@ import React, { Component } from 'react';
 import * as api from '../Utils/api'
 import CommentsByArticleId from './CommentsByArticleId';
 import { Redirect } from '@reach/router'
+import Voter from './Voter'
 
 class ArticlesByID extends Component {
     state = {
         article: [],
         hidden: true,
-        toDashboard: false
+        toDashboard: false,
     }
     render() {
         if (this.state.toDashboard === true) {
@@ -23,6 +24,8 @@ class ArticlesByID extends Component {
                 <p>Body : {body}</p>
                 <p>Topic : {topic}</p>
                 <p>Votes : {votes}</p>
+                <Voter votes={votes} article_id={article_id} />
+
                 <button type='submit' onClick={this.showComments}>View Comments</button>
                 <button type='submit' onClick={this.deleteArticle}>Delete Article</button>
                 {

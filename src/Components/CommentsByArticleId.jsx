@@ -24,7 +24,6 @@ class CommentsByArticleId extends Component {
                             <p>Comment ID: {comment.comment_id}</p>
                             <p>Time & Date: {comment.created_at}</p>
 
-                            <Voter votes={comment.votes} article_id={article_id} />
                             <button onClick={() => this.handleDelete(comment.comment_id)} >Delete Comment</button>
 
                         </li>)

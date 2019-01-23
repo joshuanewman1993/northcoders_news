@@ -3,21 +3,29 @@ import * as api from '../Utils/api'
 
 class AddArticle extends Component {
     state = {
-        description: '',
-        slug: ''
+        title: '',
+        body: '',
+        username: '',
+        topic: ''
     }
     render() {
         return (
             <div>
                 <h2>Add Article</h2>
                 <form onSubmit={this.handleSubmit}>
-                    <label htmlFor='description' >Description</label>
-                    <input id='description' type='text' value={this.state.description} onChange={this.handleChange}></input>
+                    <label htmlFor='title' >title</label>
+                    <input id='title' type='text' value={this.state.title} onChange={this.handleChange}></input>
 
-                    <label htmlFor='slug' >Slug</label>
-                    <input id='slug' type='text' value={this.state.slug} onChange={this.handleChange}></input>
+                    <label htmlFor='topic' >topic</label>
+                    <input id='topic' type='text' value={this.state.topic} onChange={this.handleChange}></input>
 
-                    <button type='submit'>Add Topic</button>
+                    <label htmlFor='body' >body</label>
+                    <input id='body' type='text' value={this.state.body} onChange={this.handleChange}></input>
+
+                    <label htmlFor='username' >username</label>
+                    <input id='username' type='text' value={this.state.username} onChange={this.handleChange}></input>
+
+                    <button type='submit'>Add Article</button>
                 </form>
             </div>
         );
@@ -29,12 +37,14 @@ class AddArticle extends Component {
         })
     }
     handleSubmit = (event) => {
-        const { description, slug } = this.state
+        const { title, body, username, topic } = this.state
         event.preventDefault();
-        api.addTopic(description, slug)
+        api.addArticle(title, body, username, topic)
         this.setState({
-            description: '',
-            slug: ''
+            title: '',
+            body: '',
+            username: '',
+            topic: ''
         })
     }
 }

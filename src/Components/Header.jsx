@@ -1,11 +1,13 @@
 import React from 'react';
-import '../App.css';
+import '../CSS/Header.css'
 
 
-const Header = () => {
+const Header = (props) => {
+
     return (
         <div className='header'>
             <h1>Northcoders News</h1>
+
 
         </div>
     );

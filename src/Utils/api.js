@@ -6,13 +6,13 @@ export const fetchTopics = async () => {
     return data;
 }
 
-export const fetchArticles = async (page) => {
-    const { data } = await axios.get(`${BASE_URL}/articles?page=${page}`)
+export const fetchArticles = async (filter) => {
+    const { data } = await axios.get(`${BASE_URL}/articles?sort_by=${filter}`)
     return data.articles;
 }
 
 export const fetchArticlesByTopic = async (slug) => {
-    const { data } = await axios.get(`${BASE_URL}/topics/${slug}/articles`)
+    const { data } = await axios.get(`${BASE_URL}/topics/${slug}/articles?limit=30`)
     return data.article;
 }
 
@@ -57,9 +57,24 @@ export const addTopic = async (description, slug) => {
 }
 
 export const patchArticleVote = async (article_id, direction) => {
-    const { data } = await axios.patch(`${BASE_URL}/articles/${article_id}`,
-        { inc_votes: direction })
-    return data.article
+    const { data } = await axios.patch(`${BASE_URL}/articles/${article_id}`, {
+        inc_votes: direction
+    })
+    console.log(data)
+    return data
+}
+
+export const addArticle = async (title, body, username, topic) => {
+    const { data } = await axios.post(`${BASE_URL}/topics/${topic}/articles`, {
+        title: title,
+        body: body,
+        username: username
+    })
+    // }).then(function (response) {
+    //     console.log(response)
+    // }).then(function (err) {
+    //     console.log(err)
+    // })
 }
 // export const fetchArticles = async (slug) => {
 //     const URL = slug

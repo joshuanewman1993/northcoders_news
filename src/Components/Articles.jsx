@@ -5,12 +5,23 @@ import * as api from '../Utils/api'
 class Articles extends Component {
     state = {
         articles: [],
-        page: 1
+        page: 1,
+        value: ''
     }
     render() {
-        const { articles, page } = this.state
+        const { articles } = this.state
         return (
             <div className='articles'>
+                <form onSubmit={this.handleSubmit}>
+                    <label>Select how to query the articles :
+                    <select value={this.state.value} onChange={this.handleChange}>
+                            <option value='date_created'>Date Created</option>
+                            <option value='comment_count'>Comment Count </option>
+                            <option value='votes'>Votes</option>
+                        </select>
+                    </label>
+                    <input type='submit' value='Submit' />
+                </form>
                 <ul>
                     {
                         articles.map(article => <li key={article.article_id}><Link to={`${article.article_id}`}>{article.title}</Link></li>)
@@ -41,6 +52,17 @@ class Articles extends Component {
                 }))
             })
             .catch(err => console.log(err))
+    }
+
+    handleChange = (event) => {
+        this.setState({
+            value: event.target.value
+        });
+    }
+    handleSubmit(event) {
+        event.preventDefault();
+        const { value } = this.state;
+        api.fetchArticles(value)
     }
 
     // updatePageNumber = (direction) => {

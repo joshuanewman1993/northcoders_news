@@ -13,6 +13,7 @@ import * as api from './Utils/api'
 import DeletedArticle from './Components/DeletedArticle';
 import Logout from './Components/Logout';
 import AddArticle from './Components/AddArticle';
+import HomePage from './Components/HomePage';
 
 
 class App extends Component {
@@ -23,20 +24,23 @@ class App extends Component {
     const { user } = this.state
     return (
       <div className="App">
-        <Login login={this.login} user={user}>
-          <Header />
-          <Logout logout={this.logOut} />
-          <Nav />
-          <Router>
-            <Topics path='/topics/*' />
-            <ArticlesByTopic path='/topics/:slug/articles' />
-            <Articles path='/articles' />
-            <AddArticle path='/add-article' />
-            <ArticlesByID path='/articles/:article_id' />
-            <DeletedArticle path='/articles/deleted' />
-            <Users path='/users' />
-          </Router>
-        </Login>
+        <div className='inner'>
+          <Login login={this.login} user={user}>
+            <Header />
+            <Logout logout={this.logOut} />
+            <Nav user={user} />
+            <Router>
+              <HomePage path='/' />
+              <Topics path='/topics/*' />
+              <ArticlesByTopic path='/topics/:slug/articles' />
+              <Articles path='/articles' />
+              <AddArticle path='/add-article' />
+              <ArticlesByID path='/articles/:article_id' />
+              <DeletedArticle path='/articles/deleted' />
+              <Users path='/users' />
+            </Router>
+          </Login>
+        </div>
       </div >
     );
   }
