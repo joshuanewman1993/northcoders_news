@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import * as api from '../Utils/api'
+import Voter from './Voter';
 
 class CommentsByArticleId extends Component {
     state = {
@@ -11,6 +12,8 @@ class CommentsByArticleId extends Component {
     render() {
         const { author, body, comment_id, created_at, votes } = this.state.comments
         const { comments } = this.state
+        const { article_id } = this.props
+
         return (
             < div >
                 <ul>
@@ -20,10 +23,9 @@ class CommentsByArticleId extends Component {
                             <p>Body: {comment.body}</p>
                             <p>Comment ID: {comment.comment_id}</p>
                             <p>Time & Date: {comment.created_at}</p>
-                            <p>Votes: {comment.votes}</p>
+
+                            <Voter votes={comment.votes} article_id={article_id} />
                             <button onClick={() => this.handleDelete(comment.comment_id)} >Delete Comment</button>
-                            <button type="submit" onClick={() => this.handleVote(1)}>Vote Up</button>
-                            <button type="submit" onClick={() => this.handleVote(-1)}>Vote Down</button>
 
                         </li>)
                     }

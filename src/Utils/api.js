@@ -48,6 +48,21 @@ export const deleteArticle = async (article_id) => {
     const { data } = await axios.delete(`${BASE_URL}/articles/${article_id}`)
     return data;
 }
+
+export const addTopic = async (description, slug) => {
+    const { data } = await axios.post(`${BASE_URL}/topics`, {
+        body: JSON.stringify({
+            description: description,
+            slug: slug
+        })
+    })
+}
+
+export const patchArticleVote = async (article_id, direction) => {
+    const { data } = await axios.patch(`${BASE_URL}/articles/${article_id}`,
+        { inc_votes: direction })
+    return data.article
+}
 // export const fetchArticles = async (slug) => {
 //     const URL = slug
 //         ? `${BASE_URL}/topic/article`

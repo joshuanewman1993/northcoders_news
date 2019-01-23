@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link, Router } from '@reach/router'
 import * as api from '../Utils/api'
+import AddTopic from './AddTopic';
 
 class Topics extends Component {
     state = {
@@ -8,14 +9,19 @@ class Topics extends Component {
     }
     render() {
         const { topics } = this.state
+
         return (
+
             <div className='topicsDiv'>
                 <ul className='topics'>
                     {
-                        topics.map(topic => <li className='listItem' key={topic.slug}><Link to={topic.slug}> <p>{topic.slug}</p></Link></li>)
+                        topics.map(topic => <li className='listItem' key={topic.slug}><Link to={`${topic.slug}/articles`}> <p>{topic.slug}</p></Link></li>)
                     }
                 </ul>
-
+                <Link to='/topics/add'>Add Topic</Link>
+                <Router>
+                    <AddTopic path='add' />
+                </Router>
             </div>
         );
     }
@@ -31,6 +37,7 @@ class Topics extends Component {
             })
             .catch(err => console.log(err))
     }
+
 }
 
 

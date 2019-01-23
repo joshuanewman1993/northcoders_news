@@ -11,6 +11,8 @@ import ArticlesByID from './Components/ArticlesById';
 import Login from './Components/Login';
 import * as api from './Utils/api'
 import DeletedArticle from './Components/DeletedArticle';
+import Logout from './Components/Logout';
+
 
 class App extends Component {
   state = {
@@ -22,10 +24,11 @@ class App extends Component {
       <div className="App">
         <Login login={this.login} user={user}>
           <Header />
+          <Logout logout={this.logOut} />
           <Nav />
           <Router>
-            <Topics path="/topics" />
-            <ArticlesByTopic path='/topics/:slug' />
+            <Topics path='/topics/*' />
+            <ArticlesByTopic path='/topics/:slug/articles' />
             <Articles path='/articles' />
             <ArticlesByID path='/articles/:article_id' />
             <DeletedArticle path='/articles/deleted' />
@@ -54,6 +57,15 @@ class App extends Component {
         localStorage.setItem('user', JSON.stringify(user))
       })
   }
+
+  logOut = () => {
+    localStorage.clear()
+    this.setState({
+      user: {}
+    })
+  }
 }
+
+
 
 export default App;
