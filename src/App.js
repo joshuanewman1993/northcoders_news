@@ -37,7 +37,7 @@ class App extends Component {
               <AddArticle path='/add-article' />
               <ArticlesByID path='/articles/:article_id' />
               <DeletedArticle path='/articles/deleted' />
-              <Users path='/users' />
+              {/* <Users path='/users' /> */}
             </Router>
           </Login>
         </div>

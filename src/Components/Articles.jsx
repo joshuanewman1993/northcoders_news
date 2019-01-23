@@ -6,7 +6,7 @@ class Articles extends Component {
     state = {
         articles: [],
         page: 1,
-        value: ''
+        value: 'created_at'
     }
     render() {
         const { articles } = this.state
@@ -16,7 +16,6 @@ class Articles extends Component {
                     <label>Select how to query the articles :
                     <select value={this.state.value} onChange={this.handleChange}>
                             <option value='date_created'>Date Created</option>
-                            <option value='comment_count'>Comment Count </option>
                             <option value='votes'>Votes</option>
                         </select>
                     </label>
@@ -59,10 +58,14 @@ class Articles extends Component {
             value: event.target.value
         });
     }
-    handleSubmit(event) {
+    handleSubmit = (event) => {
         event.preventDefault();
         const { value } = this.state;
-        api.fetchArticles(value)
+        api.fetchArticles(value).then(articles => {
+            this.setState(() => ({
+                articles
+            }))
+        })
     }
 
     // updatePageNumber = (direction) => {

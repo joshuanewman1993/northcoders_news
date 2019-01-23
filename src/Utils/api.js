@@ -7,7 +7,8 @@ export const fetchTopics = async () => {
 }
 
 export const fetchArticles = async (filter) => {
-    const { data } = await axios.get(`${BASE_URL}/articles?sort_by=${filter}`)
+    const URL = filter ? `${BASE_URL}/articles?sort_by=${filter}` : `${BASE_URL}/articles`
+    const { data } = await axios.get(URL)
     return data.articles;
 }
 
@@ -60,7 +61,6 @@ export const patchArticleVote = async (article_id, direction) => {
     const { data } = await axios.patch(`${BASE_URL}/articles/${article_id}`, {
         inc_votes: direction
     })
-    console.log(data)
     return data
 }
 
