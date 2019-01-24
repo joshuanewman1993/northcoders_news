@@ -15,9 +15,10 @@ class Topics extends Component {
             <div className='topicsDiv'>
                 <h3>The lastest trending topics...</h3>
 
+
                 <ul className='topics'>
                     {
-                        topics.map(topic => <li className='listItem' key={topic.slug}><Link to={`${topic.slug}/articles`}> <p>{topic.slug}</p></Link></li>)
+                        topics.map(topic => <li className='topicsItem' key={topic.slug}><Link to={`${topic.slug}/articles`}> <p>{topic.slug}</p></Link></li>)
                     }
                 </ul>
                 <Link to='/topics/add'>Add Topic</Link>

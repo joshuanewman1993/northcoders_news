@@ -27,6 +27,7 @@ class App extends Component {
         <div className='inner'>
           <Login login={this.login} user={user}>
             <Header />
+            <p>Welcome {user.username}</p>
             <Logout logout={this.logOut} />
             <Nav user={user} />
             <Router>
@@ -35,9 +36,9 @@ class App extends Component {
               <ArticlesByTopic path='/topics/:slug/articles' />
               <Articles path='/articles' />
               <AddArticle path='/add-article' />
-              <ArticlesByID path='/articles/:article_id' />
+              <ArticlesByID path='/articles/:article_id' user={user} />
               <DeletedArticle path='/articles/deleted' />
-              {/* <Users path='/users' /> */}
+              <Users path='/users' />
             </Router>
           </Login>
         </div>

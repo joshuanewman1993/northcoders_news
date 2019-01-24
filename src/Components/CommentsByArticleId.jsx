@@ -1,18 +1,17 @@
 import React, { Component } from 'react';
 import * as api from '../Utils/api'
-import Voter from './Voter';
+import CommentVoter from './Voter';
 
 class CommentsByArticleId extends Component {
     state = {
         comments: [],
         username: '',
         body: '',
-        inc_votes: 0
     }
     render() {
         const { author, body, comment_id, created_at, votes } = this.state.comments
         const { comments } = this.state
-        const { article_id } = this.props
+        const { article_id, user } = this.props
 
         return (
             < div >
@@ -23,8 +22,9 @@ class CommentsByArticleId extends Component {
                             <p>Body: {comment.body}</p>
                             <p>Comment ID: {comment.comment_id}</p>
                             <p>Time & Date: {comment.created_at}</p>
-
-                            <button onClick={() => this.handleDelete(comment.comment_id)} >Delete Comment</button>
+                            <p>Comment Votes: {comment.votes}</p>
+                            <CommentVoter votes={comment.votes} article_id={article_id} comment_id={comment.comment_id} />
+                            <button onClick={() => this.handleDelete(comment.comment_id)} disabled={user.username !== author} >Delete Comment</button>
 
                         </li>)
                     }

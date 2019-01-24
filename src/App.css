@@ -6,7 +6,6 @@
 .App {
   background-color: white;
   height: 100%;
-  border: solid 1px rgb(3, 143, 108);
   margin: 1rem;
   
 }
@@ -15,8 +14,3 @@
 }
 
 
-
-.articles {
-  border:solid 1px rgb(3, 143, 108);
-margin: 2rem;
-}

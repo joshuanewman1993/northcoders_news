@@ -1,0 +1,17 @@
+.login {
+    margin: 5rem;
+    height: 70vh;
+    background-color: rgba(21, 143, 137, 0.651);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form {
+    padding: 3rem;
+
+}
+
+.input {
+    width: 40rem;
+}

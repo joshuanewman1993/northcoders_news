@@ -11,12 +11,12 @@ class ArticlesByTopic extends Component {
     render() {
         const articles = this.state.articles
         return (
-            <ul>
+            <ul className='articlesByTopic'>
                 {
 
                     articles.map(article => {
                         const link = `/articles/${article.article_id}`
-                        return <li><Link to={link}>{article.title}</Link></li>
+                        return <li className='articlesListByTopic' key={article.article_id}><Link to={link}>{article.title}</Link></li>
                     })
                 }
                 <Link to='/add-article'>Add Article</Link>
@@ -34,7 +34,6 @@ class ArticlesByTopic extends Component {
         const { slug } = this.props
         api.fetchArticlesByTopic(slug)
             .then(articles => {
-                console.log(articles)
                 this.setState(() => ({
                     articles: articles
                 }))

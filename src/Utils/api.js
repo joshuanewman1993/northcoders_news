@@ -32,6 +32,11 @@ export const fetchUsers = async (username) => {
     return data
 }
 
+export const fetchAllUsers = async () => {
+    const { data } = await axios.get(`${BASE_URL}/users`)
+    return data;
+}
+
 export const handleDelete = async (article_id, comment_id) => {
     const { data } = await axios.delete(`${BASE_URL}/articles/${article_id}/comments/${comment_id}`)
     return data
@@ -70,16 +75,11 @@ export const addArticle = async (title, body, username, topic) => {
         body: body,
         username: username
     })
-    // }).then(function (response) {
-    //     console.log(response)
-    // }).then(function (err) {
-    //     console.log(err)
-    // })
 }
-// export const fetchArticles = async (slug) => {
-//     const URL = slug
-//         ? `${BASE_URL}/topic/article`
-//         : `${BASE_URL}/articles`
-//     const { data } = await axios.get(`${BASE_URL}/articles`)
-//     return data.articles
-// }
+
+export const patchCommentVote = async (article_id, comment_id, direction) => {
+    const { data } = await axios.patch(`${BASE_URL}/articles/${article_id}/comments/${comment_id}`, {
+        inc_votes: direction
+    })
+    return data
+}

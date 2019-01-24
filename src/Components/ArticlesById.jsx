@@ -15,6 +15,8 @@ class ArticlesByID extends Component {
             return <Redirect to='/articles/deleted' />
         }
         const { article_id, author, title, body, topic, votes } = this.state.article
+        const { user } = this.props
+        console.log(user)
         return (
             <div>
                 <h1>Articles by ID</h1>
@@ -27,9 +29,9 @@ class ArticlesByID extends Component {
                 <Voter votes={votes} article_id={article_id} />
 
                 <button type='submit' onClick={this.showComments}>View Comments</button>
-                <button type='submit' onClick={this.deleteArticle}>Delete Article</button>
+                <button type='submit' onClick={this.deleteArticle} disabled={user.username !== author} >Delete Article</button>
                 {
-                    !this.state.hidden && <CommentsByArticleId article_id={article_id} />
+                    !this.state.hidden && <CommentsByArticleId article_id={article_id} user={user} />
                 }
             </div>
         );

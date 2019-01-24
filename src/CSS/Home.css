@@ -1,0 +1,34 @@
+
+
+.Home h1 {
+    font-style: italic;
+    font-size: 1.5rem;
+}
+
+.item {
+    margin: 0;
+    padding: 0;
+    height: 68vh;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.listItem {
+    height: 80%;
+    width: 25%;
+    border: solid 1px black;
+    border-radius: 15px;
+    transition: 1s;
+    padding: 1rem;
+    list-style: none;
+
+
+}
+
+.listItem:hover{
+  transform: scale(0.9);
+  background-color: rgba(103, 146, 135, 0.507);
+  }

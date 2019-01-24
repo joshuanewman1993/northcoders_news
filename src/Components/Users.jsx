@@ -6,10 +6,13 @@ class Users extends Component {
         users: []
     }
     render() {
-
+        console.log('here')
+        const { users } = this.state
         return (
             <div>
-                <h1>Users here</h1>
+                {
+                    users.map(user => <li>{user.username}</li>)
+                }
 
             </div>
         );
@@ -18,11 +21,11 @@ class Users extends Component {
         this.fetchUsers();
     }
     fetchUsers = () => {
-        api.fetchUsers()
+        api.fetchAllUsers()
             .then(users => {
                 this.setState(() => ({
                     users: users
-                }))
+                }), () => console.log(this.state))
             })
             .catch(err => console.log(err))
     }
