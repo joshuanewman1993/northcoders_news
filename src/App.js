@@ -7,7 +7,7 @@ import Topics from './Components/Topics'
 import Articles from './Components/Articles';
 import Users from './Components/Users';
 import ArticlesByTopic from './Components/ArticlesByTopic';
-import ArticlesByID from './Components/ArticlesById';
+import ArticlesById from './Components/ArticlesById';
 import Login from './Components/Login';
 import * as api from './Utils/api'
 import DeletedArticle from './Components/DeletedArticle';
@@ -37,7 +37,7 @@ class App extends Component {
               <ArticlesByTopic path='/topics/:slug/articles' />
               <Articles path='/articles' />
               <AddArticle path='/add-article' />
-              <ArticlesByID path='/articles/:article_id' user={user} />
+              <ArticlesById path='/articles/:article_id' user={user} />
               <DeletedArticle path='/articles/deleted' />
               <Users path='/users' />
             </Router>

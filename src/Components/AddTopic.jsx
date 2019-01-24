@@ -6,7 +6,6 @@ class AddTopic extends Component {
     state = {
         description: '',
         slug: '',
-        dashboard: false
     }
     render() {
 

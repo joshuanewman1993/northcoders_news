@@ -9,7 +9,7 @@ class CommentsByArticleId extends Component {
         body: '',
     }
     render() {
-        const { author, body, comment_id, created_at, votes } = this.state.comments
+        const { author } = this.state.comments
         const { comments } = this.state
         const { article_id, user } = this.props
 
@@ -71,7 +71,7 @@ class CommentsByArticleId extends Component {
 
     addComment = async (article_id) => {
         const newComment = { author: this.state.username, body: this.state.body, created_at: Date.now(), votes: 0 }
-        const { username, body } = this.state
+        const { body } = this.state
         api.addComment(article_id.username, body)
             .then(this.setState({ comments: [...this.state.comments, newComment] })
             )

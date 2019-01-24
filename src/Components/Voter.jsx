@@ -11,8 +11,8 @@ class Voter extends Component {
         const { votes } = this.props
         return (
             <div>
-                <img src={up} onClick={() => this.updateVote(1)} disabled={(voteChange > 0)} width='30px'></img>
-                <img src={down} onClick={() => this.updateVote(-1)} disabled={(voteChange < 0)} width='30px'></img>
+                <img src={up} onClick={() => this.updateVote(1)} disabled={(voteChange > 0)} width='30px' alt='voteup'></img>
+                <img src={down} onClick={() => this.updateVote(-1)} disabled={(voteChange < 0)} width='30px' alt='votedown'></img>
                 <p>{votes + voteChange}</p>
             </div >
         );

@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import '../CSS/Login.css'
-import Nav from './Nav';
 import ShowUsers from './ShowUsers';
-import * as api from '../Utils/api'
 
 
 class Login extends Component {

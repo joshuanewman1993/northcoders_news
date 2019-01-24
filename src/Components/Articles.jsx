@@ -48,7 +48,6 @@ class Articles extends Component {
     }
 
     fetchArticles = () => {
-        const { page } = this.state
         api.fetchArticles()
             .then(articles => {
                 this.setState(() => ({
