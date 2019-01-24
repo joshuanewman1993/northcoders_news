@@ -42,6 +42,7 @@ export const handleDelete = async (article_id, comment_id) => {
     return data
 }
 export const addComment = async (article_id, username, body) => {
+    console.log(article_id)
     const { data } = await axios.post(`${BASE_URL}/articles/${article_id}/comments`, {
         body: JSON.stringify({
             username: username,

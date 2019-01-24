@@ -25,7 +25,7 @@ class Login extends Component {
 
                         </form >
                         {
-                            !this.state.hidden && <ShowUsers />
+                            this.state.hidden && <ShowUsers />
                         }
                     </div>
                     <button onClick={this.showUsers}>View the username's to login with.</button>

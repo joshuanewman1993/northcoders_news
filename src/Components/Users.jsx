@@ -31,7 +31,7 @@ class Users extends Component {
             .then(users => {
                 this.setState(() => ({
                     users: users
-                }), () => console.log(this.state))
+                }))
             })
             .catch(err => console.log(err))
     }

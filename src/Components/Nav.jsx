@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from '@reach/router'
 import '../CSS/Navbar.css'
 
-const Nav = () => {
+const Nav = ({ user }) => {
     return (
         <nav className='navbar'>
             <Link className='nav' to='/'>Home</Link>
@@ -12,7 +12,9 @@ const Nav = () => {
             <Link className='nav' to='/articles'>Articles</Link>
 
             <Link className='nav' to='/users'>Users</Link>
+
         </nav>
+
     );
 };
 
