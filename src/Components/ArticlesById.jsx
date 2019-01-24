@@ -19,17 +19,18 @@ class ArticlesByID extends Component {
         console.log(user)
         return (
             <div>
-                <h1>Articles by ID</h1>
+                <h1>{title}</h1>
                 <p>Article ID: {article_id}</p>
                 <p>Author: {author}</p>
-                <p>Title: {title}</p>
                 <p>Body : {body}</p>
                 <p>Topic : {topic}</p>
                 <p>Votes : {votes}</p>
                 <Voter votes={votes} article_id={article_id} />
 
-                <button type='submit' onClick={this.showComments}>View Comments</button>
+
                 <button type='submit' onClick={this.deleteArticle} disabled={user.username !== author} >Delete Article</button>
+                <br></br>
+                <button type='submit' onClick={this.showComments}>View Comments</button>
                 {
                     !this.state.hidden && <CommentsByArticleId article_id={article_id} user={user} />
                 }

@@ -27,7 +27,7 @@ class App extends Component {
         <div className='inner'>
           <Login login={this.login} user={user}>
             <Header />
-            <p>Welcome {user.username}</p>
+            {/* <p>Welcome {user.username}</p> */}
             <Logout logout={this.logOut} />
             <Nav user={user} />
             <Router>

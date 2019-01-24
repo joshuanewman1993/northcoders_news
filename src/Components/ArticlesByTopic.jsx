@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import * as api from '../Utils/api'
 import { Link, Router } from '@reach/router'
 import AddArticle from './AddArticle';
+import '../CSS/ArticlesByTopic.css';
 
 
 class ArticlesByTopic extends Component {
