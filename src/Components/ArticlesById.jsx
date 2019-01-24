@@ -4,15 +4,21 @@ import CommentsByArticleId from './CommentsByArticleId';
 import { Redirect, Link } from '@reach/router'
 import Voter from './Voter'
 import '../CSS/ArticlesById.css'
+import Error from './Error'
 class ArticlesByID extends Component {
     state = {
         article: [],
         hidden: true,
         toDashboard: false,
+        hasError: false
     }
     render() {
+        const { hasError } = this.state
         if (this.state.toDashboard === true) {
             return <Redirect to='/articles/deleted' />
+        }
+        if (hasError) {
+            return <Error err={hasError} />
         }
         const { article_id, author, title, body, topic, votes } = this.state.article
         const { user } = this.props
@@ -25,7 +31,6 @@ class ArticlesByID extends Component {
                 <p>Author: {author}</p>
                 <p>Body : {body}</p>
                 <p>Topic : {topic}</p>
-                <p>Votes : {votes}</p>
                 <Voter votes={votes} article_id={article_id} />
 
 
@@ -49,7 +54,9 @@ class ArticlesByID extends Component {
                     article: article
                 }))
             })
-            .catch(err => console.log(err))
+            .catch(err => this.setState({
+                hasError: err
+            }))
     }
     showComments = () => {
         this.setState(state => ({
