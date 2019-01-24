@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from '@reach/router'
 import * as api from '../Utils/api'
+import '../CSS/Articles.css'
 
 class Articles extends Component {
     state = {
@@ -21,9 +22,9 @@ class Articles extends Component {
                     </label>
                     <input type='submit' value='Submit' />
                 </form>
-                <ul>
+                <ul className='articlesUL'>
                     {
-                        articles.map(article => <li key={article.article_id}><Link to={`${article.article_id}`}>{article.title}</Link></li>)
+                        articles.map(article => <li className='articleItem' key={article.article_id}><Link to={`${article.article_id}`}>{article.title}</Link></li>)
                     }
                 </ul>
 
