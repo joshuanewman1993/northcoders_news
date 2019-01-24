@@ -3,7 +3,7 @@ import * as api from '../Utils/api'
 import CommentsByArticleId from './CommentsByArticleId';
 import { Redirect } from '@reach/router'
 import Voter from './Voter'
-
+import '../CSS/ArticlesById.css'
 class ArticlesByID extends Component {
     state = {
         article: [],
