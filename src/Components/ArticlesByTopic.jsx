@@ -12,20 +12,23 @@ class ArticlesByTopic extends Component {
     render() {
         const articles = this.state.articles
         return (
-            <ul className='articlesByTopic'>
-                {
+            <div>
+                <h3>The lastest trending articles...</h3>
+                <Link to='/add-article'>Click here if you wish to add an article!</Link>
 
-                    articles.map(article => {
-                        const link = `/articles/${article.article_id}`
-                        return <li className='articlesListByTopic' key={article.article_id}><Link to={link}>{article.title}</Link></li>
-                    })
-                }
-                <Link to='/add-article'>Add Article</Link>
-                <Router>
-                    <AddArticle path='add-article' />
-                </Router>
-            </ul >
+                <ul className='articlesByTopic'>
+                    {
 
+                        articles.map(article => {
+                            const link = `/articles/${article.article_id}`
+                            return <li className='articlesListByTopic' key={article.article_id}><Link to={link}>{article.title}</Link></li>
+                        })
+                    }
+                    <Router>
+                        <AddArticle path='add-article' />
+                    </Router>
+                </ul >
+            </div>
         );
     }
     componentDidMount() {

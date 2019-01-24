@@ -81,5 +81,6 @@ export const patchCommentVote = async (article_id, comment_id, direction) => {
     const { data } = await axios.patch(`${BASE_URL}/articles/${article_id}/comments/${comment_id}`, {
         inc_votes: direction
     })
+    console.log(data)
     return data
 }

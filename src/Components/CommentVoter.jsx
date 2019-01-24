@@ -7,7 +7,6 @@ class CommentVoter extends Component {
     }
 
     render() {
-        console.log('here')
         const { commentVote } = this.state
         const { commentVotes, article_id, comment_id } = this.props
         return (

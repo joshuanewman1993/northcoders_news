@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
 import '../CSS/Login.css'
+import Nav from './Nav';
+import ShowUsers from './ShowUsers';
+import * as api from '../Utils/api'
 
 
 class Login extends Component {
     state = {
-        username: ''
+        username: '',
+        hidden: false
     }
     render() {
         const { username } = this.state;
@@ -21,6 +25,10 @@ class Login extends Component {
                             <input id='username' onChange={this.handleChange} value={username} />
                             <button>Submit</button>
                         </form >
+                        {
+                            !this.state.hidden && <ShowUsers />
+                        }
+                        <button onClick={this.showUsers}>View all users</button>
                     </div>
                 </div>
             )
@@ -38,6 +46,13 @@ class Login extends Component {
             username: ''
         })
     }
+    showUsers = () => {
+        const { hidden } = this.state
+        this.setState({
+            hidden: !hidden
+        })
+    }
+
 }
 
 export default Login;

@@ -12,23 +12,27 @@ class Articles extends Component {
     render() {
         const { articles } = this.state
         return (
-            <div className='articles'>
-                <form onSubmit={this.handleSubmit}>
-                    <label>Select how to query the articles :
+            <div >
+                <h3>The lastest trending articles...</h3>
+                <Link to='/add-article'>Click here if you wish to add an article!</Link>
+                <div className='articles'>
+                    <form onSubmit={this.handleSubmit}>
+                        <label>Sort the articles by:
                     <select value={this.state.value} onChange={this.handleChange}>
-                            <option value='date_created'>Date Created</option>
-                            <option value='votes'>Votes</option>
-                        </select>
-                    </label>
-                    <input type='submit' value='Submit' />
-                </form>
-                <ul className='articlesUL'>
-                    {
-                        articles.map(article => <li className='articleItem' key={article.article_id}><Link to={`${article.article_id}`}>{article.title}</Link></li>)
-                    }
-                </ul>
+                                <option value='date_created'>Date Created</option>
+                                <option value='votes'>Votes</option>
+                            </select>
+                        </label>
+                        <input type='submit' value='Submit' />
+                    </form>
+                    <ul className='articlesUL'>
+                        {
+                            articles.map(article => <li className='articleItem' key={article.article_id}><Link to={`${article.article_id}`}>{article.title}</Link></li>)
+                        }
+                    </ul>
+                </div>
 
-            </div>
+            </div >
         );
     }
     componentDidMount() {

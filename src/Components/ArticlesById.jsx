@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import * as api from '../Utils/api'
 import CommentsByArticleId from './CommentsByArticleId';
-import { Redirect } from '@reach/router'
+import { Redirect, Link } from '@reach/router'
 import Voter from './Voter'
 import '../CSS/ArticlesById.css'
 class ArticlesByID extends Component {
@@ -18,6 +18,7 @@ class ArticlesByID extends Component {
         const { user } = this.props
         console.log(user)
         return (
+
             <div className='articleById'>
                 <h1>{title}</h1>
                 <p>Article ID: {article_id}</p>
