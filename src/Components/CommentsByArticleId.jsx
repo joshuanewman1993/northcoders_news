@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import * as api from '../Utils/api'
-import CommentVoter from './Voter';
+import CommentVoter from './CommentVoter';
 import '../CSS/Comments.css'
 class CommentsByArticleId extends Component {
     state = {
@@ -22,7 +22,6 @@ class CommentsByArticleId extends Component {
                             <p>Body: {comment.body}</p>
                             <p>Comment ID: {comment.comment_id}</p>
                             <p>Time & Date: {comment.created_at}</p>
-                            <p>Comment Votes: {comment.votes}</p>
                             <CommentVoter votes={comment.votes} article_id={article_id} comment_id={comment.comment_id} />
                             <button onClick={() => this.handleDelete(comment.comment_id)} disabled={user.username !== author} >Delete Comment</button>
 

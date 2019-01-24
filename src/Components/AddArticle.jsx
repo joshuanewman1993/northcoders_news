@@ -13,16 +13,16 @@ class AddArticle extends Component {
             <div>
                 <h2>Add Article</h2>
                 <form onSubmit={this.handleSubmit}>
-                    <label htmlFor='title' >title</label>
+                    <label htmlFor='title' ><h2>Title</h2></label>
                     <input id='title' type='text' value={this.state.title} onChange={this.handleChange}></input>
 
-                    <label htmlFor='topic' >topic</label>
+                    <label htmlFor='topic' ><h2>Topic</h2></label>
                     <input id='topic' type='text' value={this.state.topic} onChange={this.handleChange}></input>
 
-                    <label htmlFor='body' >body</label>
-                    <input id='body' type='text' value={this.state.body} onChange={this.handleChange}></input>
+                    <label htmlFor='body' ><h2>Body</h2></label>
+                    <textarea id='body' type='text' value={this.state.body} onChange={this.handleChange}></textarea>
 
-                    <label htmlFor='username' >username</label>
+                    <label htmlFor='username' ><h2>Username</h2></label>
                     <input id='username' type='text' value={this.state.username} onChange={this.handleChange}></input>
 
                     <button type='submit'>Add Article</button>

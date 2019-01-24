@@ -11,23 +11,25 @@ class Login extends Component {
     render() {
         const { username } = this.state;
         const { user } = this.props;
+        console.log(username)
         return user ?
             <> {this.props.children}</>
-            // <h1>Hello</h1>
             : (
                 <div className='login'>
                     <h1>Welcome to Northcoders News</h1>
                     <div className='form'>
                         <form onSubmit={this.handleSubmit}>
                             <label htmlFor='username'>Login with username</label>
-                            <input id='username' onChange={this.handleChange} value={username} />
+                            <input id='username' onChange={this.handleChange} value={username} required />
                             <button>Submit</button>
+
                         </form >
                         {
                             !this.state.hidden && <ShowUsers />
                         }
-                        <button onClick={this.showUsers}>View all users</button>
                     </div>
+                    <button onClick={this.showUsers}>View the username's to login with.</button>
+
                 </div>
             )
     }

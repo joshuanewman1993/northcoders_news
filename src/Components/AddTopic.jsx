@@ -14,13 +14,13 @@ class AddTopic extends Component {
                 <h2>Add a topic...</h2>
                 <form onSubmit={this.handleSubmit}>
                     <div class='row'>
-                        <label htmlFor='slug' >Topic</label>
-                        <input id='slug' type='text' value={this.state.slug} onChange={this.handleChange}></input>
+                        <label htmlFor='slug' ><h2>Topic</h2></label>
+                        <input id='slug' type='text' value={this.state.slug} onChange={this.handleChange} required></input>
                     </div>
                     <div class='row'>
 
-                        <label htmlFor='description' >Description</label>
-                        <textarea id='description' type='text' value={this.state.description} onChange={this.handleChange}></textarea>
+                        <label htmlFor='description' ><h2>Description</h2></label>
+                        <textarea id='description' type='text' value={this.state.description} onChange={this.handleChange} required></textarea>
                     </div>
 
 
