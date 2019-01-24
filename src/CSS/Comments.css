@@ -1,0 +1,14 @@
+.commentsList {
+list-style: none;
+padding: 1rem;
+}
+
+.commentsList > button {
+    width: 7rem;
+    height: 2rem;
+    border-radius: 12px;
+    font-weight: 1rem;
+    background-color:rgba(125, 230, 203, 0.61);
+
+    
+}

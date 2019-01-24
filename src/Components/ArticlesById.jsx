@@ -18,7 +18,7 @@ class ArticlesByID extends Component {
         const { user } = this.props
         console.log(user)
         return (
-            <div>
+            <div className='articleById'>
                 <h1>{title}</h1>
                 <p>Article ID: {article_id}</p>
                 <p>Author: {author}</p>

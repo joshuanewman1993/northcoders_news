@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import * as api from '../Utils/api'
 import CommentVoter from './Voter';
-
+import '../CSS/Comments.css'
 class CommentsByArticleId extends Component {
     state = {
         comments: [],
@@ -17,7 +17,7 @@ class CommentsByArticleId extends Component {
             < div >
                 <ul>
                     {
-                        comments.map(comment => <li key={comment.comment_id}>
+                        comments.map(comment => <li className='commentsList' key={comment.comment_id}>
                             <p>Author: {comment.author}</p>
                             <p>Body: {comment.body}</p>
                             <p>Comment ID: {comment.comment_id}</p>
