@@ -1,21 +1,29 @@
 import React, { Component } from 'react';
 import * as api from '../Utils/api'
-
+import '../CSS/TopicForm.css'
+import { navigate } from '@reach/router'
 class AddTopic extends Component {
     state = {
         description: '',
-        slug: ''
+        slug: '',
+        dashboard: false
     }
     render() {
-        return (
-            <div>
-                <h2>This is the add topic page</h2>
-                <form onSubmit={this.handleSubmit}>
-                    <label htmlFor='description' >Description</label>
-                    <input id='description' type='text' value={this.state.description} onChange={this.handleChange}></input>
 
-                    <label htmlFor='slug' >Slug</label>
-                    <input id='slug' type='text' value={this.state.slug} onChange={this.handleChange}></input>
+        return (
+            <div className='addTopic'>
+                <h2>Add a topic...</h2>
+                <form onSubmit={this.handleSubmit}>
+                    <div class='row'>
+                        <label htmlFor='slug' >Topic</label>
+                        <input id='slug' type='text' value={this.state.slug} onChange={this.handleChange}></input>
+                    </div>
+                    <div class='row'>
+
+                        <label htmlFor='description' >Description</label>
+                        <textarea id='description' type='text' value={this.state.description} onChange={this.handleChange}></textarea>
+                    </div>
+
 
                     <button type='submit'>Add Topic</button>
                 </form>
@@ -29,9 +37,10 @@ class AddTopic extends Component {
         })
     }
     handleSubmit = (event) => {
-        const { description, slug } = this.state
+        const { description, slug, dashboard } = this.state
         event.preventDefault();
         api.addTopic(description, slug)
+        navigate('/topics')
         this.setState({
             description: '',
             slug: ''

@@ -1,8 +1,7 @@
 
 .topics{
-    margin: 0;
-    padding: 0;
-    height: 68vh;
+
+    height: 50vh;
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -51,4 +50,9 @@
 
 .topics a {
     font-size: 2rem;
+}
+
+.h4 {
+    color: black;
+    text-decoration: none;
 }

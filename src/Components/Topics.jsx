@@ -14,16 +14,15 @@ class Topics extends Component {
         return (
             <div className='topicsDiv'>
                 <h3>The lastest trending topics...</h3>
-
-
+                <Link to='/add-topic'><h4>Click here if you wish to add a topic!</h4></Link>
+                <br></br>
                 <ul className='topics'>
                     {
                         topics.map(topic => <li className='topicsItem' key={topic.slug}><Link to={`${topic.slug}/articles`}> <p>{topic.slug}</p></Link></li>)
                     }
                 </ul>
-                <Link to='/topics/add'>Add Topic</Link>
                 <Router>
-                    <AddTopic path='add' />
+                    <AddTopic path='add-topic' />
                 </Router>
             </div>
         );

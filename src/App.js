@@ -14,6 +14,7 @@ import DeletedArticle from './Components/DeletedArticle';
 import Logout from './Components/Logout';
 import AddArticle from './Components/AddArticle';
 import HomePage from './Components/HomePage';
+import AddTopic from './Components/AddTopic';
 
 
 class App extends Component {
@@ -33,6 +34,7 @@ class App extends Component {
             <Router>
               <HomePage path='/' />
               <Topics path='/topics/*' />
+              <AddTopic path='/add-topic' />
               <ArticlesByTopic path='/topics/:slug/articles' />
               <Articles path='/articles' />
               <AddArticle path='/add-article' />
