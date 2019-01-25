@@ -2,17 +2,23 @@ import React, { Component } from 'react';
 import * as api from '../Utils/api'
 import CommentVoter from './CommentVoter';
 import '../CSS/Comments.css'
+import Error from './Error'
+
 class CommentsByArticleId extends Component {
     state = {
         comments: [],
         username: '',
         body: '',
+        hasError: false
     }
     render() {
         const { author } = this.state.comments
         const { comments } = this.state
         const { article_id, user } = this.props
-
+        const { hasError } = this.state
+        if (hasError) {
+            return <Error err={hasError} />
+        }
         return (
             < div >
                 <ul>
@@ -46,9 +52,9 @@ class CommentsByArticleId extends Component {
             .then(() => this.setState(prevState => ({
                 comments: prevState.comments.filter(comment => comment.comment_id !== comment_id)
             })))
-            .catch((err) => {
-                console.log(err);
-            })
+            .catch(err => this.setState({
+                hasError: err
+            }))
     }
 
     handleChange = (event) => {
@@ -89,7 +95,9 @@ class CommentsByArticleId extends Component {
                     comments: comments
                 }))
             })
-            .catch(err => console.log(err))
+            .catch(err => this.setState({
+                hasError: err
+            }))
     }
 
 }

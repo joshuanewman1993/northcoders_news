@@ -5,6 +5,7 @@ import { Redirect } from '@reach/router'
 import Voter from './Voter'
 import '../CSS/ArticlesById.css'
 import Error from './Error'
+
 class ArticlesByID extends Component {
     state = {
         article: [],
