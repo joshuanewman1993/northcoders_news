@@ -26,7 +26,7 @@ class ArticlesByID extends Component {
 
             <div className='articleById'>
                 <h1>{title}</h1>
-                <p>Article ID: {article_id}</p>
+                <p>Arti1cle ID: {article_id}</p>
                 <p>Author: {author}</p>
                 <p>Body : {body}</p>
                 <p>Topic : {topic}</p>

@@ -3,13 +3,19 @@ import * as api from '../Utils/api'
 import { Link, Router } from '@reach/router'
 import AddArticle from './AddArticle';
 import '../CSS/ArticlesByTopic.css';
+import Error from './Error'
 
 
 class ArticlesByTopic extends Component {
     state = {
-        articles: []
+        articles: [],
+        hasError: false
     }
     render() {
+        const { hasError } = this.state
+        if (hasError) {
+            return <Error err={hasError} />
+        }
         const articles = this.state.articles
         return (
             <div>
@@ -42,7 +48,9 @@ class ArticlesByTopic extends Component {
                     articles: articles
                 }))
             })
-            .catch(err => console.log(err))
+            .catch(err => this.setState({
+                hasError: err
+            }))
     }
 
 }

@@ -13,8 +13,11 @@ const Nav = ({ user }) => {
 
             <Link className='nav' to='/users'>Users</Link>
 
-        </nav>
+            <Link className='nav' to='/add-article' >Add Article</Link>
 
+            <Link className='nav' to='/add-topic' >Add Topic</Link>
+
+        </nav>
     );
 };
 

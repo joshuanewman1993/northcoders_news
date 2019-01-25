@@ -9,11 +9,15 @@
     text-decoration: none;
     font-size: 2rem;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    padding: 1rem;
+    padding: 1.5rem;
     transition: 1s;
   }
 
   .nav:hover {
     transform: scale(1.5)
   
+  }
+
+  .side {
+    justify-content: right;
   }
