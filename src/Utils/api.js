@@ -6,14 +6,14 @@ export const fetchTopics = async () => {
     return data;
 }
 
-export const fetchArticles = async (filter) => {
-    const URL = filter ? `${BASE_URL}/articles?sort_by=${filter}` : `${BASE_URL}/articles`
+export const fetchArticles = async (value, page) => {
+    const URL = value ? `${BASE_URL}/articles?sort_by=${value}` : `${BASE_URL}/articles?page=${page}`
     const { data } = await axios.get(URL)
     return data.articles;
 }
 
 export const fetchArticlesByTopic = async (slug) => {
-    const { data } = await axios.get(`${BASE_URL}/topics/${slug}/articles?limit=30`)
+    const { data } = await axios.get(`${BASE_URL}/topics/${slug}/articles`)
     return data.article;
 }
 
@@ -29,7 +29,7 @@ export const fetchCommentsByArticleId = async (article_id) => {
 
 export const fetchUsers = async (username) => {
     const { data } = await axios.get(`${BASE_URL}/users/${username}`)
-    return data
+    return data;
 }
 
 export const fetchAllUsers = async () => {
@@ -42,14 +42,13 @@ export const handleDelete = async (article_id, comment_id) => {
     return data
 }
 export const addComment = async (article_id, username, body) => {
-    console.log(article_id)
+    console.log(username, body)
     const { data } = await axios.post(`${BASE_URL}/articles/${article_id}/comments`, {
-        body: JSON.stringify({
-            username: username,
-            body: body
-        })
+        username: username,
+        body: body
     })
 }
+
 
 export const deleteArticle = async (article_id) => {
     const { data } = await axios.delete(`${BASE_URL}/articles/${article_id}`)

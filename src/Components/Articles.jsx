@@ -2,11 +2,13 @@ import React, { Component } from 'react';
 import { Link } from '@reach/router'
 import * as api from '../Utils/api'
 import '../CSS/Articles.css'
+import throttle from 'lodash.throttle'
 
 class Articles extends Component {
     state = {
         articles: [],
         page: 1,
+        hasAllArticles: false,
         value: 'created_at'
     }
     render() {
@@ -19,7 +21,7 @@ class Articles extends Component {
                     <form onSubmit={this.handleSubmit}>
                         <label>Sort the articles by:
                     <select value={this.state.value} onChange={this.handleChange}>
-                                <option value='date_created'>Date Created</option>
+                                <option value='created_at'>Date Created</option>
                                 <option value='votes'>Votes</option>
                             </select>
                         </label>
@@ -37,14 +39,13 @@ class Articles extends Component {
     }
     componentDidMount() {
         this.fetchArticles();
-        // window.addEventListener('scroll', handleScroll)
+        window.addEventListener('scroll', this.handleScroll)
     }
     componentDidUpdate(prevProps, prevState) {
         const pageUpdated = prevState.page !== this.state.page
         if (pageUpdated) {
             this.fetchArticles();
         }
-        //if topic has changed in state then call the reset page number
     }
 
     fetchArticles = () => {
@@ -55,16 +56,17 @@ class Articles extends Component {
                 }))
             })
             .catch(err => console.log(err))
+
     }
 
     handleChange = (event) => {
         this.setState({
             value: event.target.value
-        });
+        })
     }
     handleSubmit = (event) => {
         event.preventDefault();
-        const { value } = this.state;
+        const { value, page } = this.state;
         api.fetchArticles(value).then(articles => {
             this.setState(() => ({
                 articles
@@ -72,25 +74,24 @@ class Articles extends Component {
         })
     }
 
-    // updatePageNumber = (direction) => {
-    //     this.setState(({ page }) => ({
-    //         page: page + direction
-    //     }))
-    // }
-    // resetPageNumber = () => {
-    //     //this will reset page back to zero
-    // }
-    // handleScroll = throttle(() => {
-    //     const distanceFromTop = window.scrollY
-    //     const heightOfScreen = window.innerHeight
-    //     const documentHeight = document.body.scrollHeight;
-    //     if (distanceFromTop + heightOfScreen > documentHeight - 100) {
-    //         //npm i lodash throttle
-    //         this.setState(({ page }) => ({
-    //             page: page + 1
-    //         }))
-    //     }
-    // }, 3000)
+
+    handleScroll = throttle(() => {
+        const distanceFromTop = window.scrollY
+        const heightOfScreen = window.innerHeight
+        const documentHeight = document.body.scrollHeight;
+        if (distanceFromTop + heightOfScreen > documentHeight - 100) {
+            this.setState(({ page }) => ({
+                page: page + 1
+            }))
+        }
+    }, 1000)
+
+    resetPageNumber = () => {
+        this.setState({
+            page: 1,
+            hasAllArticles: false
+        }, this.fetchArticles);
+    }
 }
 
 export default Articles;

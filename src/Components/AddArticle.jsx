@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { navigate, Redirect } from '@reach/router'
 import * as api from '../Utils/api'
 
 class AddArticle extends Component {
@@ -6,10 +7,14 @@ class AddArticle extends Component {
         title: '',
         body: '',
         username: '',
-        topic: ''
+        topic: '',
+        toPage: false
     }
     render() {
-        return (
+        const { toPage } = this.state
+        if (toPage === true) {
+            return <Redirect to='/articles/added' />
+        } return (
             <div>
                 <h2>Add Article</h2>
                 <form onSubmit={this.handleSubmit}>
@@ -37,14 +42,15 @@ class AddArticle extends Component {
         })
     }
     handleSubmit = (event) => {
-        const { title, body, username, topic } = this.state
+        const { title, body, username, topic, toPage } = this.state
         event.preventDefault();
         api.addArticle(title, body, username, topic)
         this.setState({
             title: '',
             body: '',
             username: '',
-            topic: ''
+            topic: '',
+            toPage: !toPage
         })
     }
 }

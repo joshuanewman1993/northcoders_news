@@ -29,9 +29,10 @@ class CommentsByArticleId extends Component {
                     }
                 </ul>
                 <form onSubmit={this.handleSubmit}>
-                    <h1>Add Comment Below</h1>
+                    <label htmlFor='username' ><h2>Username</h2></label>
                     <input id='username' type='text' value={this.state.username} onChange={this.handleChange}></input>
-                    <input id='body' type='text' value={this.state.body} onChange={this.handleChange}></input>
+                    <label htmlFor='body' ><h2>Body</h2></label>
+                    <textarea id='body' type='text' value={this.state.body} onChange={this.handleChange}></textarea>
 
                     <button type='submit'>Add Comment</button>
                 </form>
@@ -73,7 +74,7 @@ class CommentsByArticleId extends Component {
         const { body, username } = this.state
         api.addComment(article_id, username, body)
             .then(this.setState({ comments: [...this.state.comments, newComment] })
-            ).then(console.log(this.state.comments))
+            )
     }
 
 

@@ -15,6 +15,9 @@ import Logout from './Components/Logout';
 import AddArticle from './Components/AddArticle';
 import HomePage from './Components/HomePage';
 import AddTopic from './Components/AddTopic';
+import Footer from './Components/Footer';
+import AddedArticle from './Components/AddedArticle'
+
 
 
 class App extends Component {
@@ -39,15 +42,18 @@ class App extends Component {
               <AddArticle path='/add-article' />
               <ArticlesById path='/articles/:article_id' user={user} />
               <DeletedArticle path='/articles/deleted' />
+              <AddedArticle path='/articles/added' />
               <Users path='/users' />
             </Router>
           </Login>
+          <Footer />
         </div>
       </div >
     );
   }
   componentDidMount() {
     const storedUser = localStorage.getItem('user')
+    // if (storedUser) {
     const parsedUser = JSON.parse(storedUser)
     if (this.state.user !== parsedUser) {
       this.setState(({
@@ -55,6 +61,7 @@ class App extends Component {
       }))
     }
   }
+
 
   login = (username) => {
     api.fetchUsers(username)
@@ -72,7 +79,6 @@ class App extends Component {
     this.setState({
       user: {}
     }, () => {
-      // navigate here...
       navigate('/')
     })
   }
