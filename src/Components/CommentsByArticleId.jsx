@@ -16,6 +16,7 @@ class CommentsByArticleId extends Component {
         const { comments } = this.state
         const { article_id, user } = this.props
         const { hasError } = this.state
+
         if (hasError) {
             return <Error err={hasError} />
         }
@@ -49,6 +50,7 @@ class CommentsByArticleId extends Component {
     handleDelete(comment_id) {
         const { article_id } = this.props
         api.handleDelete(article_id, comment_id)
+        console.log(comment_id)
             .then(() => this.setState(prevState => ({
                 comments: prevState.comments.filter(comment => comment.comment_id !== comment_id)
             })))
@@ -68,19 +70,25 @@ class CommentsByArticleId extends Component {
     handleSubmit = (event) => {
         const { article_id } = this.props
         event.preventDefault();
-        this.addComment(article_id);
-        this.setState({
-            username: '',
-            body: ''
-        })
+        this.addComment(article_id).then(() =>
+            this.setState({
+                username: '',
+                body: ''
+            }))
+            .catch(err => this.setState({
+                hasError: err
+            }))
     };
 
     addComment = async (article_id) => {
         const newComment = { author: this.state.username, body: this.state.body, created_at: Date.now(), votes: 0 }
         const { body, username } = this.state
         api.addComment(article_id, username, body)
-            .then(this.setState({ comments: [...this.state.comments, newComment] })
+            .then(() => this.setState({ comments: [...this.state.comments, newComment] })
             )
+            .catch(err => this.setState({
+                hasError: err
+            }))
     }
 
 
@@ -90,11 +98,10 @@ class CommentsByArticleId extends Component {
     fetchCommentsByArticleId = () => {
         const { article_id } = this.props
         api.fetchCommentsByArticleId(article_id)
-            .then(comments => {
+            .then(comments =>
                 this.setState(() => ({
                     comments: comments
-                }))
-            })
+                })))
             .catch(err => this.setState({
                 hasError: err
             }))

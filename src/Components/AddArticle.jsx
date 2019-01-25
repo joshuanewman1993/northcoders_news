@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { navigate, Redirect } from '@reach/router'
+import { navigate } from '@reach/router'
 import * as api from '../Utils/api'
 import Error from './Error'
 
@@ -10,17 +10,15 @@ class AddArticle extends Component {
         body: '',
         username: '',
         topic: '',
-        toPage: false
+        toPage: false,
+        hasError: false
     }
     render() {
         const { toPage, hasError } = this.state
         if (hasError) {
             return <Error err={hasError} />
         }
-        if (toPage === true) {
-            return <Redirect to='/articles/added' />
-
-        } return (
+        return (
             <div>
                 <h2>Add Article</h2>
                 <form onSubmit={this.handleSubmit}>
@@ -38,7 +36,7 @@ class AddArticle extends Component {
 
                     <button type='submit'>Add Article</button>
                 </form>
-            </div>
+            </div >
         );
     }
     handleChange = (event) => {
@@ -51,13 +49,15 @@ class AddArticle extends Component {
         const { title, body, username, topic, toPage } = this.state
         event.preventDefault();
         api.addArticle(title, body, username, topic)
-        this.setState({
-            title: '',
-            body: '',
-            username: '',
-            topic: '',
-            toPage: !toPage
-        })
+            .then(() =>
+                this.setState({
+                    title: '',
+                    body: '',
+                    username: '',
+                    topic: '',
+                    toPage: !toPage
+                }))
+            .then(() => navigate('/articles/added'))
             .catch(err => this.setState({
                 hasError: err
             }))

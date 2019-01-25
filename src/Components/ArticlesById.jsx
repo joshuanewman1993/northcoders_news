@@ -49,11 +49,10 @@ class ArticlesByID extends Component {
     fetchArticlesById = () => {
         const { article_id } = this.props
         api.fetchArticlesById(article_id)
-            .then(article => {
+            .then(article =>
                 this.setState(() => ({
                     article: article
-                }))
-            })
+                })))
             .catch(err => this.setState({
                 hasError: err
             }))

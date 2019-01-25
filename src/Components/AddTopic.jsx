@@ -2,14 +2,22 @@ import React, { Component } from 'react';
 import * as api from '../Utils/api'
 import '../CSS/TopicForm.css'
 import { navigate } from '@reach/router'
+import Error from './Error'
+
 class AddTopic extends Component {
     state = {
         description: '',
         slug: '',
+        hasError: false
+
     }
     render() {
-
+        const { hasError } = this.state
+        if (hasError) {
+            return <Error err={hasError} />
+        }
         return (
+
             <div className='addTopic'>
                 <h2>Add a topic...</h2>
                 <form onSubmit={this.handleSubmit}>
@@ -36,14 +44,17 @@ class AddTopic extends Component {
         })
     }
     handleSubmit = (event) => {
-        const { description, slug, dashboard } = this.state
+        const { description, slug } = this.state
         event.preventDefault();
         api.addTopic(description, slug)
-        navigate('/topics')
-        this.setState({
-            description: '',
-            slug: ''
-        })
+            .then(() => navigate('/topics'))
+            .then(() => this.setState({
+                description: '',
+                slug: ''
+            }))
+            .catch(err => this.setState({
+                hasError: err
+            }))
     }
 }
 

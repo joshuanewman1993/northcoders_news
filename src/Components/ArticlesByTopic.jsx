@@ -43,14 +43,13 @@ class ArticlesByTopic extends Component {
     fetchArticlesByTopic = () => {
         const { slug } = this.props
         api.fetchArticlesByTopic(slug)
-            .then(articles => {
+            .then(articles =>
                 this.setState(() => ({
                     articles: articles
-                }))
-            })
-            .catch(err => this.setState({
-                hasError: err
-            }))
+                })))
+        // .catch(err => this.setState({
+        //     hasError: err
+        // }))
     }
 
 }

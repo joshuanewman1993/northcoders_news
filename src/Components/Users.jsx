@@ -2,13 +2,19 @@ import React, { Component } from 'react';
 import * as api from '../Utils/api'
 import '../CSS/Users.css'
 import picture from '../images/user6.png'
+import Error from './Error'
+
 class Users extends Component {
     state = {
-        users: []
+        users: [],
+        hasError: false
+
     }
     render() {
-        console.log('here')
-        const { users } = this.state
+        const { users, hasError } = this.state
+        if (hasError) {
+            return <Error err={hasError} />
+        }
         return (
             <div>
                 <ul className='users'>
@@ -33,7 +39,9 @@ class Users extends Component {
                     users: users
                 }))
             })
-            .catch(err => console.log(err))
+            .catch(err => this.setState({
+                hasError: err
+            }))
     }
 }
 

@@ -3,16 +3,22 @@ import { Link, Router } from '@reach/router'
 import * as api from '../Utils/api'
 import AddTopic from './AddTopic';
 import '../CSS/Topics.css'
+import Error from './Error'
+
 
 class Topics extends Component {
     state = {
         topics: [],
-        toPage: false
+        toPage: false,
+        hasError: false
+
 
     }
     render() {
-        const { topics } = this.state
-
+        const { topics, hasError } = this.state
+        if (hasError) {
+            return <Error err={hasError} />
+        }
         return (
             <div className='topicsDiv'>
                 <h3>The lastest trending topics...</h3>
@@ -39,7 +45,9 @@ class Topics extends Component {
                     topics
                 }))
             })
-            .catch(err => console.log(err))
+            .catch(err => this.setState({
+                hasError: err
+            }))
     }
 
 }

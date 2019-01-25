@@ -3,16 +3,23 @@ import { Link } from '@reach/router'
 import * as api from '../Utils/api'
 import '../CSS/Articles.css'
 import throttle from 'lodash.throttle'
+import Error from './Error'
+
 
 class Articles extends Component {
     state = {
         articles: [],
         page: 1,
         hasAllArticles: false,
-        value: 'created_at'
+        value: 'created_at',
+        hasError: false
     }
     render() {
-        const { articles } = this.state
+
+        const { articles, hasError } = this.state
+        if (hasError) {
+            return <Error err={hasError} />
+        }
         return (
             <div >
                 <h3>The lastest trending articles...</h3>
@@ -50,12 +57,13 @@ class Articles extends Component {
 
     fetchArticles = () => {
         api.fetchArticles()
-            .then(articles => {
+            .then(articles =>
                 this.setState(() => ({
                     articles
-                }))
-            })
-            .catch(err => console.log(err))
+                })))
+            .catch(err => this.setState({
+                hasError: err
+            }))
 
     }
 
@@ -67,11 +75,13 @@ class Articles extends Component {
     handleSubmit = (event) => {
         event.preventDefault();
         const { value, page } = this.state;
-        api.fetchArticles(value).then(articles => {
+        api.fetchArticles(value).then(articles =>
             this.setState(() => ({
                 articles
+            })))
+            .catch(err => this.setState({
+                hasError: err
             }))
-        })
     }
 
 
