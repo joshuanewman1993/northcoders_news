@@ -1,6 +1,5 @@
 import React from 'react';
 import '../CSS/Header.css'
-import Logout from './Logout'
 
 const Header = (props) => {
 

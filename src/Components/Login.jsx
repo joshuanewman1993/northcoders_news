@@ -18,8 +18,9 @@ class Login extends Component {
                     <h1>Welcome to Northcoders News</h1>
                     <div className='form'>
                         <form onSubmit={this.handleSubmit}>
-                            <label htmlFor='username'>Login with username</label>
+                            <label htmlFor='username'>Username</label>
                             <input id='username' onChange={this.handleChange} value={username} required />
+                            <br></br>
                             <button>Submit</button>
 
                         </form >
@@ -29,7 +30,7 @@ class Login extends Component {
                     </div>
                     <button onClick={this.showUsers}>View the username's to login with.</button>
 
-                </div>
+                </div >
             )
     }
     handleChange = (event) => {

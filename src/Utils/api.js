@@ -42,11 +42,11 @@ export const handleDelete = async (article_id, comment_id) => {
     return data
 }
 export const addComment = async (article_id, username, body) => {
-    console.log(username, body)
     const { data } = await axios.post(`${BASE_URL}/articles/${article_id}/comments`, {
         username: username,
         body: body
     })
+    return data;
 }
 
 
@@ -60,6 +60,7 @@ export const addTopic = async (description, slug) => {
         slug: slug,
         description: description
     })
+    return data;
 }
 
 export const patchArticleVote = async (article_id, direction) => {
@@ -75,12 +76,12 @@ export const addArticle = async (title, body, username, topic) => {
         body: body,
         username: username
     })
+    return data;
 }
 
 export const patchCommentVote = async (article_id, comment_id, direction) => {
     const { data } = await axios.patch(`${BASE_URL}/articles/${article_id}/comments/${comment_id}`, {
         inc_votes: direction
     })
-    console.log(data)
     return data
 }

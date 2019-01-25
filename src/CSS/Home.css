@@ -32,3 +32,9 @@
   transform: scale(0.9);
   background-color: rgba(103, 146, 135, 0.507);
   }
+
+  .Home img {
+        width: auto;
+        height: auto;
+        max-width: 100%;
+      }

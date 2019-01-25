@@ -9,13 +9,15 @@ import Error from './Error'
 class ArticlesByTopic extends Component {
     state = {
         articles: [],
-        hasError: false
+        hasError: false,
+        isLoading: true
     }
     render() {
-        const { hasError } = this.state
+        const { hasError, isLoading } = this.state
         if (hasError) {
             return <Error err={hasError} />
         }
+        if (isLoading === false) return <p>No articles found..</p>
         const articles = this.state.articles
         return (
             <div>
@@ -47,9 +49,17 @@ class ArticlesByTopic extends Component {
                 this.setState(() => ({
                     articles: articles
                 })))
-        // .catch(err => this.setState({
-        //     hasError: err
-        // }))
+            .catch(err => {
+                if (err.response.data.msg.includes('topic not found!')) {
+                    this.setState({
+                        isloading: false
+                    })
+                } else {
+                    this.setState({
+                        hasError: err
+                    })
+                }
+            })
     }
 
 }

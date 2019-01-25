@@ -10,11 +10,10 @@ class AddArticle extends Component {
         body: '',
         username: '',
         topic: '',
-        toPage: false,
         hasError: false
     }
     render() {
-        const { toPage, hasError } = this.state
+        const { hasError } = this.state
         if (hasError) {
             return <Error err={hasError} />
         }

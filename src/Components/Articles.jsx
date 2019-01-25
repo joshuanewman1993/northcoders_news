@@ -74,7 +74,7 @@ class Articles extends Component {
     }
     handleSubmit = (event) => {
         event.preventDefault();
-        const { value, page } = this.state;
+        const { value } = this.state;
         api.fetchArticles(value).then(articles =>
             this.setState(() => ({
                 articles

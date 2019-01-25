@@ -11,16 +11,19 @@ class ArticlesByID extends Component {
         article: [],
         hidden: true,
         toDashboard: false,
-        hasError: false
+        hasError: false,
+        isLoading: true
     }
     render() {
-        const { hasError } = this.state
+        const { hasError, isLoading } = this.state
+
         if (this.state.toDashboard === true) {
             return <Redirect to='/articles/deleted' />
         }
         if (hasError) {
             return <Error err={hasError} />
         }
+        if (isLoading) return <p>Loading...</p>
         const { article_id, author, title, body, topic, votes } = this.state.article
         const { user } = this.props
         return (
@@ -51,7 +54,8 @@ class ArticlesByID extends Component {
         api.fetchArticlesById(article_id)
             .then(article =>
                 this.setState(() => ({
-                    article: article
+                    article: article,
+                    isLoading: false
                 })))
             .catch(err => this.setState({
                 hasError: err
