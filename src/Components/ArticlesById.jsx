@@ -70,9 +70,9 @@ class ArticlesByID extends Component {
             .then(this.setState({
                 toDashboard: !toDashboard
             }))
-            .catch((err) => {
-                console.log(err);
-            })
+            .catch(err => this.setState({
+                hasError: err
+            }))
 
     }
 }

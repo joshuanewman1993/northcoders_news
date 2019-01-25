@@ -1,12 +1,18 @@
 import React, { Component } from 'react';
 import * as api from '../Utils/api'
+import Error from './Error'
 
 class ShowUsers extends Component {
     state = {
-        users: []
+        users: [],
+        hasError: false
     }
     render() {
+        const { hasError } = this.state
         const { users } = this.state
+        if (hasError) {
+            return <Error err={hasError} />
+        }
         return (
             <div>
                 {
@@ -25,7 +31,9 @@ class ShowUsers extends Component {
                     users: users
                 }))
             })
-            .catch(err => console.log(err))
+            .catch(err => this.setState({
+                hasError: err
+            }))
     }
 }
 
