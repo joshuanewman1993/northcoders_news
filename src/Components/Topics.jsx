@@ -7,6 +7,8 @@ import '../CSS/Topics.css'
 class Topics extends Component {
     state = {
         topics: [],
+        toPage: false
+
     }
     render() {
         const { topics } = this.state

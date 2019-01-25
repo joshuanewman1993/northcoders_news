@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { navigate, Redirect } from '@reach/router'
 import * as api from '../Utils/api'
+import Error from './Error'
+
 
 class AddArticle extends Component {
     state = {
@@ -11,9 +13,13 @@ class AddArticle extends Component {
         toPage: false
     }
     render() {
-        const { toPage } = this.state
+        const { toPage, hasError } = this.state
+        if (hasError) {
+            return <Error err={hasError} />
+        }
         if (toPage === true) {
             return <Redirect to='/articles/added' />
+
         } return (
             <div>
                 <h2>Add Article</h2>
@@ -52,6 +58,9 @@ class AddArticle extends Component {
             topic: '',
             toPage: !toPage
         })
+            .catch(err => this.setState({
+                hasError: err
+            }))
     }
 }
 
