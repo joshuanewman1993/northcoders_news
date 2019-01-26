@@ -16,8 +16,7 @@ import AddArticle from './Components/AddArticle';
 import HomePage from './Components/HomePage';
 import AddTopic from './Components/AddTopic';
 import Footer from './Components/Footer';
-import AddedArticle from './Components/AddedArticle'
-
+import AddedArticle from './Components/AddedArticle';
 
 
 class App extends Component {
@@ -30,7 +29,7 @@ class App extends Component {
       <div className="App">
         <div className='inner'>
           <Login login={this.login} user={user}>
-            <Header />
+            <Header user={user} />
             <Logout logout={this.logOut} />
             <Nav user={user} />
             <Router>
@@ -39,7 +38,7 @@ class App extends Component {
               <AddTopic path='/add-topic' />
               <ArticlesByTopic path='/topics/:slug/articles' />
               <Articles path='/articles' />
-              <AddArticle path='/add-article' />
+              <AddArticle path='/add-article' user={user} />
               <ArticlesById path='/articles/:article_id' user={user} />
               <DeletedArticle path='/articles/deleted' />
               <AddedArticle path='/articles/added' />
@@ -53,7 +52,6 @@ class App extends Component {
   }
   componentDidMount() {
     const storedUser = localStorage.getItem('user')
-    // if (storedUser) {
     const parsedUser = JSON.parse(storedUser)
     if (this.state.user !== parsedUser) {
       this.setState(({

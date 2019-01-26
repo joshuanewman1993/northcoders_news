@@ -3,19 +3,20 @@ import * as api from '../Utils/api'
 import CommentVoter from './CommentVoter';
 import '../CSS/Comments.css'
 import Error from './Error'
+import { isNullOrUndefined } from 'util';
 
 class CommentsByArticleId extends Component {
     state = {
         comments: [],
-        username: '',
+        username: this.props.user.username,
         body: '',
         hasError: false
     }
     render() {
         const { comments } = this.state
         const { article_id, user } = this.props
+        console.log(user)
         const { hasError } = this.state
-
         if (hasError) {
             return <Error err={hasError} />
         }
@@ -30,15 +31,12 @@ class CommentsByArticleId extends Component {
                             <p>Time & Date: {comment.created_at}</p>
                             <CommentVoter votes={comment.votes} article_id={article_id} comment_id={comment.comment_id} />
                             <button onClick={() => this.handleDelete(comment.comment_id)} disabled={user.username !== comment.author} >Delete Comment</button>
-
                         </li>)
                     }
                 </ul>
                 <form onSubmit={this.handleSubmit}>
-                    <label htmlFor='username' ><h2>Username</h2></label>
-                    <input id='username' type='text' value={this.state.username} onChange={this.handleChange}></input>
                     <label htmlFor='body' ><h2>Body</h2></label>
-                    <textarea id='body' type='text' value={this.state.body} onChange={this.handleChange}></textarea>
+                    <textarea id='body' type='text' value={this.state.body} onChange={this.handleChange} required ></textarea>
 
                     <button type='submit'>Add Comment</button>
                 </form>
@@ -71,7 +69,6 @@ class CommentsByArticleId extends Component {
         event.preventDefault();
         this.addComment(article_id).then(() =>
             this.setState({
-                username: '',
                 body: ''
             }))
             .catch(err => this.setState({
@@ -80,6 +77,7 @@ class CommentsByArticleId extends Component {
     };
 
     addComment = async (article_id) => {
+        console.log(this.state.username)
         const newComment = { author: this.state.username, body: this.state.body, created_at: Date.now(), votes: 0 }
         const { body, username } = this.state
         api.addComment(article_id, username, body)

@@ -70,8 +70,8 @@ export const patchArticleVote = async (article_id, direction) => {
     return data
 }
 
-export const addArticle = async (title, body, username, topic) => {
-    const { data } = await axios.post(`${BASE_URL}/topics/${topic}/articles`, {
+export const addArticle = async (title, body, username, slug) => {
+    const { data } = await axios.post(`${BASE_URL}/topics/${slug}/articles`, {
         title: title,
         body: body,
         username: username

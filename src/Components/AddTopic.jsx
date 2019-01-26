@@ -8,11 +8,11 @@ class AddTopic extends Component {
     state = {
         description: '',
         slug: '',
-        hasError: false
-
+        hasError: false,
+        topics: []
     }
     render() {
-        const { hasError } = this.state
+        const { hasError, topics } = this.state
         if (hasError) {
             return <Error err={hasError} />
         }
@@ -32,11 +32,22 @@ class AddTopic extends Component {
                     </div>
 
 
-                    <button type='submit'>Add Topic</button>
+                    <button className='topicbutton' type='submit'>Add Topic</button>
                 </form>
-            </div>
+            </div >
         );
     }
+    componentDidMount() {
+        api.fetchTopics()
+            .then(topics => {
+                this.setState({
+                    topics: topics
+                })
+            })
+    }
+    //component did mount
+    //fetch topics, api call and store in state
+    // 
     handleChange = (event) => {
         const { id } = event.target
         this.setState({

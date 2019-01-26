@@ -21,8 +21,10 @@ class CommentVoter extends Component {
         }
         return (
             <div>
-                <img src={up} onClick={() => this.updateComment(1)} disabled={(commentVote > 0)} width='30px' alt='voteup'></img>
-                <img src={down} onClick={() => this.updateComment(-1)} disabled={(commentVote < 0)} width='30px' alt='votedown'></img>
+
+                <button onClick={() => this.updateComment(1)} disabled={(commentVote > 0)}>Vote up</button>
+                <button onClick={() => this.updateComment(-1)} disabled={(commentVote < 0)}>Vote Down</button>
+                <i class="fas fa-thumbs-up"></i>
                 <p>{votes + commentVote}</p>
             </div>
         );

@@ -26,7 +26,8 @@ class Topics extends Component {
                 <br></br>
                 <ul className='topics'>
                     {
-                        topics.map(topic => <li className='topicsItem' key={topic.slug}><Link to={`${topic.slug}/articles`}> <p>{topic.slug}</p></Link></li>)
+                        topics.map(topic => <li className='topicsItem' key={topic.slug}><Link to={`${topic.slug}/articles`}> <p>Topic: {topic.slug}</p>
+                            <p>Description:{topic.description}</p></Link></li>)
                     }
                 </ul>
                 <Router>

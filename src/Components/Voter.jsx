@@ -18,10 +18,11 @@ class Voter extends Component {
         }
         return (
             <div>
-                <img src={up} onClick={() => this.updateVote(1)} disabled={(voteChange > 0)} width='30px' alt='voteup'></img>
-                <img src={down} onClick={() => this.updateVote(-1)} disabled={(voteChange < 0)} width='30px' alt='votedown'></img>
+                <button onClick={() => this.updateVote(1)} disabled={(voteChange > 0)}>Votes up</button>
+                <button onClick={() => this.updateVote(-1)} disabled={(voteChange < 0)}>Vote Down</button>
                 <p>{votes + voteChange}</p>
             </div >
+
         );
     }
 

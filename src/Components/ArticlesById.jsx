@@ -16,7 +16,6 @@ class ArticlesByID extends Component {
     }
     render() {
         const { hasError, isLoading } = this.state
-
         if (this.state.toDashboard === true) {
             return <Redirect to='/articles/deleted' />
         }

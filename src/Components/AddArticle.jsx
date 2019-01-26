@@ -8,12 +8,15 @@ class AddArticle extends Component {
     state = {
         title: '',
         body: '',
-        username: '',
+        username: this.props.user.username,
         topic: '',
-        hasError: false
+        hasError: false,
+        topics: []
     }
     render() {
-        const { hasError } = this.state
+        const { user } = this.props
+
+        const { hasError, topics } = this.state
         if (hasError) {
             return <Error err={hasError} />
         }
@@ -22,26 +25,39 @@ class AddArticle extends Component {
                 <h2>Add Article</h2>
                 <form onSubmit={this.handleSubmit}>
                     <label htmlFor='title' ><h2>Title</h2></label>
-                    <input id='title' type='text' value={this.state.title} onChange={this.handleChange}></input>
+                    <input id='title' type='text' value={this.state.title} onChange={this.handleChange} required></input>
 
                     <label htmlFor='topic' ><h2>Topic</h2></label>
-                    <input id='topic' type='text' value={this.state.topic} onChange={this.handleChange}></input>
+
+                    <select value={this.state.topic} onChange={this.handleTopicSelect} required >
+                        {
+                            topics.map(topic => <option value={topic.slug}>{topic.slug}</option>)
+                        }
+                    </select>
+
 
                     <label htmlFor='body' ><h2>Body</h2></label>
-                    <textarea id='body' type='text' value={this.state.body} onChange={this.handleChange}></textarea>
-
-                    <label htmlFor='username' ><h2>Username</h2></label>
-                    <input id='username' type='text' value={this.state.username} onChange={this.handleChange}></input>
+                    <textarea id='body' type='text' value={this.state.body} onChange={this.handleChange} required></textarea>
 
                     <button type='submit'>Add Article</button>
                 </form>
             </div >
         );
     }
+
+    componentDidMount() {
+        api.fetchTopics()
+            .then(topics => {
+                this.setState({
+                    topics: topics
+                })
+            })
+    }
     handleChange = (event) => {
         const { id } = event.target
+        console.log(id)
         this.setState({
-            [id]: event.target.value
+            [id]: event.target.value,
         })
     }
     handleSubmit = (event) => {
@@ -52,7 +68,6 @@ class AddArticle extends Component {
                 this.setState({
                     title: '',
                     body: '',
-                    username: '',
                     topic: '',
                     toPage: !toPage
                 }))
@@ -61,6 +76,16 @@ class AddArticle extends Component {
                 hasError: err
             }))
     }
+
+    handleTopicSelect = (event) => {
+        const { value } = event.target;
+        console.log(value)
+        this.setState({
+            topic: value,
+        });
+    };
+
 }
+
 
 export default AddArticle;

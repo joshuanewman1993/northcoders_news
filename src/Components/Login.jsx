@@ -11,7 +11,7 @@ class Login extends Component {
     render() {
         const { username } = this.state;
         const { user } = this.props;
-        return user ?
+        return user.username ?
             <> {this.props.children}</>
             : (
                 <div className='login'>
