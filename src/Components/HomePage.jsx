@@ -1,9 +1,8 @@
 import React from 'react';
 import '../CSS/Home.css';
-import seafood from '../images/seafood.jpg';
-import coding from '../images/javascript.jpg'
-import football from '../images/football.jpg'
 import { Link } from '@reach/router'
+import MostRecentArticles from './MostRecentArticles';
+import MostPopularArticles from './MostPopularArticles';
 
 
 
@@ -15,18 +14,12 @@ const HomePage = () => {
             <ul className='item'>
 
                 <li className='listItem'>
-                    <img src={seafood} alt='seafood'></img>
-                    <p>New</p>
+                    <h2>Trending</h2>
+                    <MostRecentArticles />
                 </li>
                 <li className='listItem'>
-                    <img src={coding} alt='coding'></img>
-                    <p>Popular</p>
-
-                </li>
-                <li className='listItem'>
-                    <img src={football} alt='football'></img>
-                    <p>Trending</p>
-
+                    <h2>Most Popular</h2>
+                    <MostPopularArticles />
                 </li>
             </ul>
         </div>

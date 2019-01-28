@@ -29,7 +29,9 @@ class CommentsByArticleId extends Component {
                             <p>Comment ID: {comment.comment_id}</p>
                             <p>Time & Date: {comment.created_at}</p>
                             <CommentVoter votes={comment.votes} article_id={article_id} comment_id={comment.comment_id} />
-                            <button onClick={() => this.handleDelete(comment.comment_id)} disabled={user.username !== comment.author} >Delete Comment</button>
+                            {
+                                this.state.username === comment.author && <button onClick={() => this.handleDelete(comment.comment_id)} disabled={user.username !== comment.author} >Delete Comment</button>
+                            }
                         </li>)
                     }
                 </ul>
@@ -76,7 +78,9 @@ class CommentsByArticleId extends Component {
 
     addComment = async (article_id) => {
         const { body, username } = this.state
+        console.log(username)
         const newComment = { author: username, body: this.state.body, created_at: Date.now(), votes: 0 }
+        console.log(newComment)
         api.addComment(article_id, username, body)
             .then(() => this.setState({ comments: [...this.state.comments, newComment] })
             )

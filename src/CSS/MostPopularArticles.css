@@ -1,0 +1,17 @@
+.popularArticles {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    }
+    
+    .popularItem {
+        width: 100%;
+        border: 1px solid black;
+        border-radius: 15px;
+        padding: 1rem;
+        background-color: rgba(25, 209, 148, 0.527);
+        margin: 1rem;
+        list-style: none;
+        
+    }

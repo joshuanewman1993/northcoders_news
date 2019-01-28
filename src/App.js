@@ -45,7 +45,6 @@ class App extends Component {
               <Users path='/users' />
             </Router>
           </Login>
-          <Footer />
         </div>
       </div >
     );
