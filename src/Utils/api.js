@@ -7,13 +7,14 @@ export const fetchTopics = async () => {
 }
 
 export const fetchArticles = async (value, page) => {
-    const URL = value ? `${BASE_URL}/articles?sort_by=${value}` : `${BASE_URL}/articles?page=${page}`
+    const URL = value ? `${BASE_URL}/articles?sort_by=${value}&page=${page}` : `${BASE_URL}/articles?page=${page}`
     const { data } = await axios.get(URL)
     return data.articles;
 }
 
-export const fetchArticlesByTopic = async (slug) => {
-    const { data } = await axios.get(`${BASE_URL}/topics/${slug}/articles`)
+export const fetchArticlesByTopic = async (slug, page) => {
+    const { data } = await axios.get(`${BASE_URL}/topics/${slug}/articles?page=${page}`)
+    console.log(data.article)
     return data.article;
 }
 

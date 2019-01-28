@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import * as api from '../Utils/api'
 import '../CSS/MostRecentArticles.css';
+import Articles from './Articles';
 
 class MostRecentArticles extends Component {
     state = {
@@ -17,7 +18,6 @@ class MostRecentArticles extends Component {
                         <p>{article.title}</p>
                         <p>{article.topic}</p>
                         <p>{article.author}</p>
-
                     </li>)
                 }
             </ul>

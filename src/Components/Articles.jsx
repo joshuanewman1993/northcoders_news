@@ -15,7 +15,6 @@ class Articles extends Component {
         hasError: false
     }
     render() {
-        console.log(this.state.articles)
         const { articles, hasError } = this.state
         if (hasError) {
             return <Error err={hasError} />
@@ -59,10 +58,11 @@ class Articles extends Component {
     }
 
     fetchArticles = () => {
-        api.fetchArticles()
+        const { page, value } = this.state
+        api.fetchArticles(value, page)
             .then(articles =>
-                this.setState(() => ({
-                    articles
+                this.setState((prevState) => ({
+                    articles: [...prevState.articles, ...articles]
                 })))
             .catch(err => this.setState({
                 hasError: err
@@ -77,8 +77,8 @@ class Articles extends Component {
     }
     handleSubmit = (event) => {
         event.preventDefault();
-        const { value } = this.state;
-        api.fetchArticles(value).then(articles =>
+        const { value, page } = this.state;
+        api.fetchArticles(value, page).then(articles =>
             this.setState(() => ({
                 articles
             })))
@@ -92,18 +92,19 @@ class Articles extends Component {
         const distanceFromTop = window.scrollY
         const heightOfScreen = window.innerHeight
         const documentHeight = document.body.scrollHeight;
+
         if (distanceFromTop + heightOfScreen > documentHeight - 100) {
             this.setState(({ page }) => ({
                 page: page + 1
             }))
         }
-    }, 1000)
+    }, 1500)
 
     resetPageNumber = () => {
         this.setState({
             page: 1,
             hasAllArticles: false
-        }, this.fetchArticles);
+        });
     }
 }
 

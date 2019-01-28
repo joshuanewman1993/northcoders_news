@@ -4,13 +4,15 @@ import { Link, Router } from '@reach/router'
 import AddArticle from './AddArticle';
 import '../CSS/ArticlesByTopic.css';
 import Error from './Error'
+import throttle from 'lodash.throttle'
 
 
 class ArticlesByTopic extends Component {
     state = {
         articles: [],
         hasError: false,
-        isLoading: true
+        isLoading: true,
+        page: 1
     }
     render() {
         const { hasError, isLoading } = this.state
@@ -29,7 +31,7 @@ class ArticlesByTopic extends Component {
 
                         articles.map(article => {
                             const link = `/articles/${article.article_id}`
-                            return <li className='articlesListByTopic' key={article.article_id}><Link to={link}>{article.title}</Link></li>
+                            return <li className='articlesListByTopic' key={article.created_at}><Link to={link}>{article.title}</Link></li>
                         })
                     }
                     <Router>
@@ -41,18 +43,27 @@ class ArticlesByTopic extends Component {
     }
     componentDidMount() {
         this.fetchArticlesByTopic();
+        window.addEventListener('scroll', this.handleScroll)
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+        const pageUpdated = prevState.page !== this.state.page
+        if (pageUpdated) {
+            this.fetchArticlesByTopic();
+        }
     }
     fetchArticlesByTopic = () => {
+        const { page } = this.state
         const { slug } = this.props
-        api.fetchArticlesByTopic(slug)
+        api.fetchArticlesByTopic(slug, page)
             .then(articles =>
-                this.setState(() => ({
-                    articles: articles
+                this.setState((prevState) => ({
+                    articles: [...prevState.articles, ...articles]
                 })))
             .catch(err => {
                 if (err.response.data.msg.includes('topic not found!')) {
                     this.setState({
-                        isloading: false
+                        isLoading: true
                     })
                 } else {
                     this.setState({
@@ -61,6 +72,17 @@ class ArticlesByTopic extends Component {
                 }
             })
     }
+    handleScroll = throttle(() => {
+        const distanceFromTop = window.scrollY
+        const heightOfScreen = window.innerHeight
+        const documentHeight = document.body.scrollHeight;
+        console.log('here')
+        if (distanceFromTop + heightOfScreen > documentHeight - 100) {
+            this.setState(({ page }) => ({
+                page: page + 1
+            }))
+        }
+    }, 1500)
 
 }
 
