@@ -16,17 +16,16 @@ const HomePage = () => {
 
                 <li className='listItem'>
                     <img src={seafood} alt='seafood'></img>
-                    <Link to='/topics/cooking/articles'>See the latest cooking articles..</Link>
-
+                    <p>New</p>
                 </li>
                 <li className='listItem'>
                     <img src={coding} alt='coding'></img>
-                    <Link to='/topics/coding/articles'>See the latest coding articles..</Link>
+                    <p>Popular</p>
 
                 </li>
                 <li className='listItem'>
                     <img src={football} alt='football'></img>
-                    <Link to='/topics/football/articles'>See the latest football articles..</Link>
+                    <p>Trending</p>
 
                 </li>
             </ul>

@@ -47,6 +47,7 @@ export const addComment = async (article_id, username, body) => {
         body: body
     })
     return data;
+
 }
 
 

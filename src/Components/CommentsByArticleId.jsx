@@ -15,7 +15,6 @@ class CommentsByArticleId extends Component {
     render() {
         const { comments } = this.state
         const { article_id, user } = this.props
-        console.log(user)
         const { hasError } = this.state
         if (hasError) {
             return <Error err={hasError} />
@@ -47,7 +46,6 @@ class CommentsByArticleId extends Component {
     handleDelete(comment_id) {
         const { article_id } = this.props
         api.handleDelete(article_id, comment_id)
-        console.log(comment_id)
             .then(() => this.setState(prevState => ({
                 comments: prevState.comments.filter(comment => comment.comment_id !== comment_id)
             })))
@@ -77,9 +75,8 @@ class CommentsByArticleId extends Component {
     };
 
     addComment = async (article_id) => {
-        console.log(this.state.username)
-        const newComment = { author: this.state.username, body: this.state.body, created_at: Date.now(), votes: 0 }
         const { body, username } = this.state
+        const newComment = { author: username, body: this.state.body, created_at: Date.now(), votes: 0 }
         api.addComment(article_id, username, body)
             .then(() => this.setState({ comments: [...this.state.comments, newComment] })
             )
