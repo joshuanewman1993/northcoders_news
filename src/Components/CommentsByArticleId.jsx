@@ -14,7 +14,7 @@ class CommentsByArticleId extends Component {
     }
     render() {
         const { comments } = this.state
-        const { article_id, user } = this.props
+        const { article_id, user, author } = this.props
         const { hasError } = this.state
         if (hasError) {
             return <Error err={hasError} />
@@ -24,7 +24,7 @@ class CommentsByArticleId extends Component {
                 <ul>
                     {
                         comments.map(comment => <li className='commentsList' key={comment.comment_id}>
-                            <p>Author: {comment.author}</p>
+                            <p>Author: {comment.username}</p>
                             <p>Body: {comment.body}</p>
                             <p>Comment ID: {comment.comment_id}</p>
                             <p>Time & Date: {comment.created_at}</p>
@@ -78,12 +78,12 @@ class CommentsByArticleId extends Component {
 
     addComment = async (article_id) => {
         const { body, username } = this.state
-        console.log(username)
-        const newComment = { author: username, body: this.state.body, created_at: Date.now(), votes: 0 }
-        console.log(newComment)
+        // const newComment = { author: author, username: username, body: this.state.body, created_at: Date.now(), votes: 0 }
         api.addComment(article_id, username, body)
-            .then(() => this.setState({ comments: [...this.state.comments, newComment] })
-            )
+            .then((comment) => {
+                const finalComment = { ...comment, author: comment.username }
+                this.setState({ comments: [...this.state.comments, finalComment] })
+            })
             .catch(err => this.setState({
                 hasError: err
             }))
@@ -96,10 +96,11 @@ class CommentsByArticleId extends Component {
     fetchCommentsByArticleId = () => {
         const { article_id } = this.props
         api.fetchCommentsByArticleId(article_id)
-            .then(comments =>
+            .then(comments => {
                 this.setState(() => ({
                     comments: comments
-                })))
+                }))
+            })
             .catch(err => this.setState({
                 hasError: err
             }))

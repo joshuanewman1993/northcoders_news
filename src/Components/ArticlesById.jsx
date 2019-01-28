@@ -40,7 +40,7 @@ class ArticlesByID extends Component {
                 <br></br>
                 <button type='submit' onClick={this.showComments}>View Comments</button>
                 {
-                    !this.state.hidden && <CommentsByArticleId article_id={article_id} user={user} />
+                    !this.state.hidden && <CommentsByArticleId article_id={article_id} user={user} author={author} />
                 }
             </div>
         );

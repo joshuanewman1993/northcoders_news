@@ -46,8 +46,7 @@ export const addComment = async (article_id, username, body) => {
         username: username,
         body: body
     })
-    console.log(data)
-    return data;
+    return data.comment;
 
 }
 
@@ -90,6 +89,5 @@ export const patchCommentVote = async (article_id, comment_id, direction) => {
 
 export const fetchMostRecent = async (limit, sortBy) => {
     const { data } = await axios.get(`${BASE_URL}/articles?sort_by=${sortBy}&&limit=${limit}`)
-    console.log(data.articles)
     return data.articles;
 }
