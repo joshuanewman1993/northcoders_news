@@ -15,14 +15,14 @@ class Articles extends Component {
         hasError: false
     }
     render() {
-
+        console.log(this.state.articles)
         const { articles, hasError } = this.state
         if (hasError) {
             return <Error err={hasError} />
         }
         return (
             <div >
-                <h3>The lastest trending articles...</h3>
+                <h3>The latest trending articles...</h3>
                 <Link to='/add-article'>Click here if you wish to add an article!</Link>
                 <div className='articles'>
                     <form onSubmit={this.handleSubmit}>
@@ -36,7 +36,10 @@ class Articles extends Component {
                     </form>
                     <ul className='articlesUL'>
                         {
-                            articles.map(article => <li className='articleItem' key={article.article_id}><Link to={`${article.article_id}`}>{article.title}</Link></li>)
+                            articles.map(article => <li className='articleItem' key={article.article_id}><Link to={`${article.article_id}`}>{article.title}
+                                <p>Posted by {article.author} into {article.topic}</p>
+                                <p>Votes: {article.votes}</p>
+                            </Link></li>)
                         }
                     </ul>
                 </div>

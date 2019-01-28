@@ -30,7 +30,7 @@ class CommentsByArticleId extends Component {
                             <p>Time & Date: {comment.created_at}</p>
                             <CommentVoter votes={comment.votes} article_id={article_id} comment_id={comment.comment_id} />
                             {
-                                this.state.username === comment.author && <button onClick={() => this.handleDelete(comment.comment_id)} disabled={user.username !== comment.author} >Delete Comment</button>
+                                this.state.username === comment.username && <button onClick={() => this.handleDelete(comment.comment_id)} disabled={user.username !== comment.author} >Delete Comment</button>
                             }
                         </li>)
                     }
