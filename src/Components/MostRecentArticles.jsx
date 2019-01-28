@@ -15,9 +15,9 @@ class MostRecentArticles extends Component {
             <ul className='recentArticles'>
                 {
                     articles.map(article => <li className='articlesList' key={article.article_id}>
-                        <p>{article.title}</p>
-                        <p>{article.topic}</p>
-                        <p>{article.author}</p>
+                        <p className='title'>{article.title}</p>
+                        <p>Posted into <b> {article.topic}</b></p>
+                        <p>By <b>{article.author}</b></p>
                     </li>)
                 }
             </ul>

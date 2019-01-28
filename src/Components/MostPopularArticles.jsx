@@ -16,9 +16,9 @@ class MostPopularArticles extends Component {
                 {
                     articles.map(article => <li className='popularItem' key={article.article_id}>
                         <p>{article.title}</p>
-                        <p>{article.topic}</p>
+                        <p>Posted into <b>{article.topic}</b></p>
                         <p>{article.author}</p>
-                        <p>{article.votes}</p>
+                        <p><b>Votes: </b>{article.votes}</p>
                     </li>)
                 }
             </ul>

@@ -92,7 +92,6 @@ class Articles extends Component {
         const distanceFromTop = window.scrollY
         const heightOfScreen = window.innerHeight
         const documentHeight = document.body.scrollHeight;
-
         if (distanceFromTop + heightOfScreen > documentHeight - 100) {
             this.setState(({ page }) => ({
                 page: page + 1
