@@ -14,10 +14,10 @@ class MostPopularArticles extends Component {
         return (
             <ul className='popularArticles'>
                 {
-                    articles.map(article => <li className='popularItem' key={article.article_id}>
-                        <p>{article.title}</p>
+                    articles.map(article => <li className='articlesList' key={article.article_id}>
+                        <p className='title'>{article.title}</p>
                         <p>Posted into <b>{article.topic}</b></p>
-                        <p>{article.author}</p>
+                        <p>By <b>{article.author}</b></p>
                         <p><b>Votes: </b>{article.votes}</p>
                     </li>)
                 }

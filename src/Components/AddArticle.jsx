@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { navigate } from '@reach/router'
-import * as api from '../Utils/api'
-import Error from './Error'
+import { navigate } from '@reach/router';
+import * as api from '../Utils/api';
+import Error from './Error';
+import '../CSS/AddArticle.css';
 
 
 class AddArticle extends Component {
@@ -22,14 +23,14 @@ class AddArticle extends Component {
         }
         return (
             <div>
-                <h2>Add Article</h2>
+                <h2>Add Article...</h2>
                 <form onSubmit={this.handleSubmit}>
                     <label htmlFor='title' ><h2>Title</h2></label>
                     <input id='title' type='text' value={this.state.title} onChange={this.handleChange} required></input>
 
                     <label htmlFor='topic' ><h2>Topic</h2></label>
 
-                    <select value={this.state.topic} onChange={this.handleTopicSelect} required >
+                    <select className='topicSelect' value={this.state.topic} onChange={this.handleTopicSelect} required >
                         {
                             topics.map(topic => <option value={topic.slug}>{topic.slug}</option>)
                         }

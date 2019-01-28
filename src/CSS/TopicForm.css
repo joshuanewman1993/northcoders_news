@@ -3,6 +3,10 @@ form {
     padding: 1rem;
     margin: 0 auto;
     max-width: 20rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
 
 }
 
@@ -37,11 +41,13 @@ input[type="password"], textarea {
   }
 
   .topicbutton {
-    color: #fff !important;
+    align-content: center;
+    font-size: 1.5rem;
+    color: black;
     text-transform: uppercase;
-    background: #ed3330;
-    padding: 20px;
-    border-radius: 5px;
+    background:rgba(125, 230, 203, 0.61);
+    padding: 1rem;
+    border-radius: 1rem;
     display: inline-block;
     border: none;
     }
