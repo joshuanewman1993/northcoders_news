@@ -18,3 +18,12 @@ h1 {
     color:black;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
+ @media(max-width: 900px) {
+     .login {
+        height: 50vh;
+        
+     }
+     .h1 {
+         font-size: 5rem;
+     }
+ }
