@@ -21,5 +21,12 @@ padding: 1rem;
     display: flex;
     flex-direction: column;
   } 
+  .left {
+    font-size: 2.3rem;
+    font-style: italic;
+    color:black;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+  }
+
   
 }
