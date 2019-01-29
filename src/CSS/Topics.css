@@ -37,6 +37,7 @@
 }
 
 .topicsItem p {
+    margin: 1rem;
     color:black;
     text-decoration: none;
     font-size: 1.5rem;
@@ -65,6 +66,10 @@
         margin: 1rem;
         width: 50%;
         height: 30%;
-        font-size: 100%;
+    }
+    .topicsItem p {
+        margin: 1rem;
+        font-size: 30%;
+
     }
    }
