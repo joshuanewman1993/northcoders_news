@@ -1,5 +1,5 @@
 .login {
-    margin: 5rem;
+    margin: 3rem;
     height: 70vh;
     background-color: rgba(21, 143, 137, 0.651);
     display: flex;
@@ -19,7 +19,8 @@ h1 {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
  @media(max-width: 900px) {
-     .h1 {
-         font-size: 1rem;
+     h1 {
+
+         font-size: 130%;
      }
  }

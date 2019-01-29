@@ -27,26 +27,24 @@ class App extends Component {
     const { user } = this.state
     return (
       <div className="App">
-        <div className='inner'>
-          <Login login={this.login} user={user}>
-            <Header user={user} />
-            <Logout logout={this.logOut} />
-            <Nav user={user} />
-            <Router>
-              <HomePage path='/' />
-              <Topics path='/topics/*' />
-              <AddTopic path='/add-topic' />
-              <ArticlesByTopic path='/topics/:slug/articles' />
-              <Articles path='/articles' />
-              <AddArticle path='/add-article' user={user} />
-              <ArticlesById path='/articles/:article_id' user={user} />
-              <DeletedArticle path='/articles/deleted' />
-              <AddedArticle path='/articles/added' />
-              <Users path='/users' />
-            </Router>
-          </Login>
-        </div>
-      </div >
+        <Login login={this.login} user={user}>
+          <Header user={user} />
+          <Logout logout={this.logOut} />
+          <Nav user={user} />
+          <Router>
+            <HomePage path='/' />
+            <Topics path='/topics/*' />
+            <AddTopic path='/add-topic' />
+            <ArticlesByTopic path='/topics/:slug/articles' />
+            <Articles path='/articles' />
+            <AddArticle path='/add-article' user={user} />
+            <ArticlesById path='/articles/:article_id' user={user} />
+            <DeletedArticle path='/articles/deleted' />
+            <AddedArticle path='/articles/added' />
+            <Users path='/users' />
+          </Router>
+        </Login>
+      </div>
     );
   }
   componentDidMount() {

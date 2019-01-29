@@ -6,6 +6,7 @@
 .App {
   background-color: white;
   height: 100vh;
+  width: auto;
   margin: 0;
   
 }
