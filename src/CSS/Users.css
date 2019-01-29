@@ -19,6 +19,8 @@
     display: flex;
     list-style: none;
     align-items: center;
+    flex-wrap: wrap;
+
 }
 
 .usersList:hover{
@@ -37,9 +39,7 @@
         list-style: none;
     }    
     .usersList p {
-        font-size: 1rem;
-    
-
+        font-size: 50%;
     }    
 
 }
