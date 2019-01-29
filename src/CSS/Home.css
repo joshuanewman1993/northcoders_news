@@ -30,3 +30,15 @@
   transform: scale(0.9);
   background-color: rgba(103, 146, 135, 0.507);
   }
+
+  
+  @media(max-width: 900px) {
+    .listItem{
+        width: 100%;
+        margin: 0;
+    }
+    .Home h1 {
+        font-style: italic;
+        font-size: 2rem;
+    }
+}
