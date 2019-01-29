@@ -1,14 +1,21 @@
 # Northcoders News Application
 
+Northcoders news is a social news aggregation app, built as a project during the Front-End module of my time Northcoders. Northcoders news displays articles with user-rating and comments, which are divided up into specific topics. Users can browse, vote an comment on articles. They can also vote on existing comments, as well as add news topics and post new articles. 
+
+Deployed on netlify here -> 
+
+This news application makes asynchronous API calls to my own server which can be found on my github here. This was built during the Back-End module of Northcoders. You can find the deployed version of the API hosted on heroku here.
+
+
 ### Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+These instructions will get you a copy of the project up and running on your local machine locally.
 
-### Prerequisities:
+### Prerequisites:
 
 `1) git clone - https://github.com/joshuanewman1993/northcoders_news`
 
-`2) cd BE2-NC-Knews - Access the folder file`
+`2) cd northcoders_news - Access the folder file`
 
 `3) npm install - Install all dependencies needed`
 
@@ -24,13 +31,12 @@ In order to get the app started, run the command:
 
 ## Built With
 
--   ReAct
+JavaScript
 -   JavaScript
--   @Reach/router
-
-## Contributing
-
--   Joshua Newman
+-   Create-React-App
+-   @Reach/router(^1.2.1)
+-   Axios(^0.18.0)
+-   Netlify 
 
 ## License
 
@@ -39,5 +45,4 @@ In order to get the app started, run the command:
 ## Acknowledgements
 
 -   Northcoders
--   FT Cohort28-Nov-2018
--   All the northcoders tutors!
+
