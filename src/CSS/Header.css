@@ -1,6 +1,6 @@
 .header{
   display: flex;
-  flex-wrap: row;
+  flex-direction: row;
   justify-content: space-between;
 }
 
@@ -12,7 +12,14 @@
   }
 
 .right {
-align-items: right;
 border: 2px solid rgba(125, 230, 203, 0.61);
 padding: 1rem;
+}
+
+@media(max-width: 900px) {
+  .header {
+    display: flex;
+    flex-direction: column;
+  } 
+  
 }
