@@ -25,6 +25,7 @@ class AddArticle extends Component {
             <div>
                 <h2>Add Article...</h2>
                 <form onSubmit={this.handleSubmit}>
+
                     <label htmlFor='title' ><h2>Title</h2></label>
                     <input id='title' type='text' value={this.state.title} onChange={this.handleChange} required></input>
 
@@ -35,12 +36,13 @@ class AddArticle extends Component {
                             topics.map(topic => <option value={topic.slug}>{topic.slug}</option>)
                         }
                     </select>
+                    <br></br>
 
 
                     <label htmlFor='body' ><h2>Body</h2></label>
                     <textarea id='body' type='text' value={this.state.body} onChange={this.handleChange} required></textarea>
 
-                    <button type='submit'>Add Article</button>
+                    <button type='submit' className='articleButton'>Add Article</button>
                 </form>
             </div >
         );

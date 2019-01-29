@@ -4,9 +4,9 @@ form {
     margin: 0 auto;
     max-width: 20rem;
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
+    flex-direction: column;
 
 }
 
@@ -50,6 +50,7 @@ input[type="password"], textarea {
     border-radius: 1rem;
     display: inline-block;
     border: none;
+    margin-top: 1rem;
     }
 
 .topicbutton:hover {

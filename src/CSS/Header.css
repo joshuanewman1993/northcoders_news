@@ -4,8 +4,8 @@
   justify-content: space-between;
 }
 
-.left {
-    font-size: 2rem;
+.left h1 {
+    font-size: 4.5rem;
     font-style: italic;
     color:black;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif

@@ -1,5 +1,28 @@
+select {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1rem;
+  width: 10rem;
+  height: 2rem;
+}
 
-  #root > div > div > div:nth-child(4) > div > form > select {
-    font-family: Arial;
-    width: 4rem;
+.articleButton {
+  align-content: center;
+  font-size: 1.5rem;
+  color: black;
+  text-transform: uppercase;
+  background:rgba(125, 230, 203, 0.61);
+  padding: 1rem;
+  border-radius: 1rem;
+  display: inline-block;
+  border: none;
+  margin-top: 1rem;
   }
+
+.articleButton:hover {
+background:rgba(125, 230, 203, 0.61);
+letter-spacing: 1px;
+-webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+-moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+box-shadow: 5px 40px -10px rgba(0,0,0,0.57);
+transition: all 0.4s ease 0s;
+}
