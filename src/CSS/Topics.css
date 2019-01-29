@@ -16,7 +16,7 @@
         width: 30%;
         height: 20%;
         margin: 0 auto;
-        background-color: white;
+        background-color: rgba(25, 209, 148, 0.527);
         font-size: 3rem;
         padding: 1rem;
         list-style: none;
@@ -64,7 +64,7 @@
     }
     .topicsItem {
         margin: 1rem;
-        width: 50%;
+        width: 80%;
         height: 30%;
     }
     .topicsItem p {
