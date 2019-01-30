@@ -1,16 +1,19 @@
 import React, { Component } from 'react';
 import '../CSS/Login.css'
-import ShowUsers from './ShowUsers';
+import * as api from '../Utils/api';
 
 
 class Login extends Component {
     state = {
         username: '',
-        hidden: false
+        users: []
     }
     render() {
-        const { username } = this.state;
+
+        const { username, users } = this.state;
+
         const { user } = this.props;
+
         return user.username ?
             <> {this.props.children}</>
             : (
@@ -18,26 +21,28 @@ class Login extends Component {
                     <h1>Welcome to Northcoders News</h1>
                     <div className='form'>
                         <form onSubmit={this.handleSubmit}>
-                            <label htmlFor='username'>Username</label>
-                            <input id='username' onChange={this.handleChange} value={username} required />
+                            <select value={this.state.username} onChange={this.handleChange}>
+                                {
+                                    users.map(user => <option value={user.username}>{user.username}</option>)
+                                }
+                            </select>
                             <br></br>
                             <button>Submit</button>
-
                         </form >
-                        {
-                            this.state.hidden && <ShowUsers />
-                        }
+
                     </div>
-                    <button onClick={this.showUsers}>View the username's to login with.</button>
 
                 </div >
             )
     }
+    componentDidMount() {
+        this.fetchUsers();
+    }
     handleChange = (event) => {
-        const { id, value } = event.target
+        const { value } = event.target;
         this.setState({
-            [id]: value
-        })
+            username: value,
+        });
     }
     handleSubmit = (event) => {
         event.preventDefault();
@@ -51,6 +56,17 @@ class Login extends Component {
         this.setState({
             hidden: !hidden
         })
+    }
+    fetchUsers = () => {
+        api.fetchAllUsers()
+            .then(users => {
+                this.setState(() => ({
+                    users: users
+                }))
+            })
+            .catch(err => this.setState({
+                hasError: err
+            }))
     }
 
 }

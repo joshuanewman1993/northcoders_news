@@ -82,7 +82,6 @@ class AddArticle extends Component {
 
     handleTopicSelect = (event) => {
         const { value } = event.target;
-        console.log(value)
         this.setState({
             topic: value,
         });

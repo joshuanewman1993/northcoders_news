@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import * as api from '../Utils/api'
 import Error from './Error'
+import '../CSS/ShowUsers.css'
 
 class ShowUsers extends Component {
     state = {
@@ -14,11 +15,11 @@ class ShowUsers extends Component {
             return <Error err={hasError} />
         }
         return (
-            <div>
+            <select>
                 {
-                    users.map(user => <li>{user.username}</li>)
+                    users.map(user => <option>{user.username}</option>)
                 }
-            </div>
+            </select>
         );
     }
     componentDidMount() {

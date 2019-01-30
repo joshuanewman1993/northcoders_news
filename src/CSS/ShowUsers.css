@@ -1,0 +1,19 @@
+/* .users {
+    margin: 0;
+    height: 10vh;
+    width: 100%;
+    display: flex;
+}
+
+.usersList {
+    height: 5%;
+    width: 8%;
+    border: solid 1px black;
+    border-radius: 15px;
+    transition: 1s;
+    display: flex;
+    list-style: none;
+    align-items: center;
+    flex-direction: row;
+
+} */
