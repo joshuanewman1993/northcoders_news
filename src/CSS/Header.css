@@ -22,7 +22,7 @@ padding: 1rem;
     flex-direction: column;
   } 
   .left {
-    font-size: 2.3rem;
+    font-size: 90%;
     font-style: italic;
     color:black;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
