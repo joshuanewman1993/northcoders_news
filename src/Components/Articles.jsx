@@ -31,7 +31,6 @@ class Articles extends Component {
                                 <option value='votes'>Votes</option>
                             </select>
                         </label>
-                        <input type='submit' value='Submit' />
                     </form>
                     <ul className='articlesUL'>
                         {
@@ -74,10 +73,19 @@ class Articles extends Component {
         this.setState({
             value: event.target.value
         })
+        const { value, page } = this.state;
+        api.fetchArticles(value, page).then(articles =>
+            this.setState(() => ({
+                articles
+            })))
+            .catch(err => this.setState({
+                hasError: err
+            }))
+
     }
     handleSubmit = (event) => {
-        event.preventDefault();
         const { value, page } = this.state;
+        event.preventDefault();
         api.fetchArticles(value, page).then(articles =>
             this.setState(() => ({
                 articles

@@ -41,6 +41,7 @@
     padding: 1rem;
 }
 
+
 @media(max-width: 900px) {
     .articleItem{
         width: 80%;

@@ -1,11 +1,12 @@
 
 .topics{
-    height: 50vh;
+    height: 100vh;
     width: 100%;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+    
 }
 
 .topicsItem {
@@ -13,16 +14,16 @@
         border: solid 1px black;;
         border-radius: 15px;
         transition: 1s;
-        width: 30%;
-        height: 20%;
+        width: 40%;
+        height: 40%;
         margin: 0 auto;
         background-color: rgba(25, 209, 148, 0.527);
         font-size: 3rem;
         padding: 1rem;
         list-style: none;
-        display: flex;
         justify-content: center;
         align-items: center;
+        margin-bottom: 1rem;
       }
 
 .topicsItem:hover{
@@ -57,6 +58,12 @@
     text-decoration: none;
 }
 
+select {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1rem;
+    width: 10rem;
+    height: 1rem;
+  }
 
 @media(max-width: 900px) {
     .topics{
