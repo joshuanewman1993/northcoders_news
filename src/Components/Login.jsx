@@ -14,7 +14,7 @@ class Login extends Component {
         return user.username ?
             <> {this.props.children}</>
             : (
-                <div className='login'>
+                < div className='login' >
                     <h1>Welcome to Northcoders News</h1>
                     <div className='form'>
                         <form onSubmit={this.handleSubmit}>
