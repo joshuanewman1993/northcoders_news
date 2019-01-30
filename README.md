@@ -1,6 +1,6 @@
 # Northcoders News Application
 
-Northcoders news is a social news aggregation app, built as a project during the Front-End module of my time Northcoders. Northcoders news displays articles with user-rating and comments, which are divided up into specific topics. Users can browse, vote an comment on articles. They can also vote on existing comments, as well as add news topics and post new articles. 
+Northcoders news is a social news aggregation app, built as a project during the Front-End module of my time Northcoders. Northcoders news displays articles with user-rating and comments, which are divided up into specific topics. Users can browse, vote and comment on articles. They can also vote on existing comments, as well as add news topics and post new articles. 
 
 Deployed on netlify here -> 
 
