@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import * as api from '../Utils/api'
 import '../CSS/MostPopularArticles.css';
-
+import { Link } from '@reach/router'
 
 class MostPopularArticles extends Component {
     state = {
@@ -11,10 +11,11 @@ class MostPopularArticles extends Component {
     }
     render() {
         const { articles } = this.state
+
         return (
             <ul className='popularArticles'>
                 {
-                    articles.map(article => <li className='articlesList' key={article.article_id}>
+                    articles.map(article => <li className='articlesList' key={article.article_id} >
                         <p className='title'>{article.title}</p>
                         <p>Posted into <b>{article.topic}</b></p>
                         <p>By <b>{article.author}</b></p>

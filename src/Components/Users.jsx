@@ -22,7 +22,7 @@ class Users extends Component {
                         users.map(user => <li key={user.username} className='usersList'>
                             <p> <b>Username:</b> {user.username}</p>
                             <p> <b>Name:</b> {user.name}</p>
-                            <p><img src={picture} alt='user' width='80px' height='80px'></img></p>
+                            <p><img className='image' src={picture} alt='user' width='80px' height='80px'></img></p>
                         </li>)
                     }
                 </ul>

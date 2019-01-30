@@ -10,7 +10,7 @@
 }
 
 .usersList {
-    height: 20%;
+    height: 40%;
     width: 25%;
     border: solid 1px black;
     border-radius: 15px;
@@ -19,13 +19,18 @@
     display: flex;
     list-style: none;
     align-items: center;
-    flex-wrap: wrap;
+flex-direction: column;
+    margin: 1rem;
 
 }
 
 .usersList:hover{
   transform: scale(0.9);
   background-color: rgba(103, 146, 135, 0.507);
+  }
+
+ p {
+      margin-top: 1rem;
   }
 
   @media(max-width: 900px) {
