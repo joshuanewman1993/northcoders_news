@@ -49,13 +49,16 @@ class App extends Component {
   }
   componentDidMount() {
     const storedUser = localStorage.getItem('user')
-    const parsedUser = JSON.parse(storedUser)
-    if (this.state.user !== parsedUser) {
+
+    if (storedUser) {
+      const parsedUser = JSON.parse(storedUser)
+
       this.setState(({
         user: parsedUser
       }))
     }
   }
+
 
 
   login = (username) => {

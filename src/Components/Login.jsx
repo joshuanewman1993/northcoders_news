@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import '../CSS/Login.css'
 import * as api from '../Utils/api';
+import Users from './Users';
 
 
 class Login extends Component {
@@ -9,12 +10,12 @@ class Login extends Component {
         users: []
     }
     render() {
-
         const { username, users } = this.state;
 
         const { user } = this.props;
-
-        return user.username ?
+        const loggedIn = user.hasOwnProperty('username')
+        return (loggedIn)
+            ?
             <> {this.props.children}</>
             : (
                 < div className='login' >
