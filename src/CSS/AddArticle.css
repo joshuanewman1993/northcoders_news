@@ -10,19 +10,20 @@ select {
   font-size: 1.5rem;
   color: black;
   text-transform: uppercase;
-  background:rgba(125, 230, 203, 0.61);
+  background-color: rgba(2, 90, 204, 0.336);
   padding: 1rem;
   border-radius: 1rem;
   display: inline-block;
   border: none;
   margin-top: 1rem;
-  }
+}
 
 .articleButton:hover {
-background:rgba(125, 230, 203, 0.61);
-letter-spacing: 1px;
--webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
--moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
-box-shadow: 5px 40px -10px rgba(0,0,0,0.57);
-transition: all 0.4s ease 0s;
+  background: red;
+  color: white;
+  letter-spacing: 1px;
+  -webkit-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
+  -moz-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
+  box-shadow: 5px 40px -10px rgba(0, 0, 0, 0.57);
+  transition: all 0.4s ease 0s;
 }
