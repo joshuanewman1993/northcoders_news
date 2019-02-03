@@ -24,9 +24,8 @@ class CommentsByArticleId extends Component {
                 <ul>
                     {
                         comments.map(comment => <li className='commentsList' key={comment.comment_id}>
-                            <p>Author: {comment.username}</p>
-                            <p>Body: {comment.body}</p>
-                            <p>Comment ID: {comment.comment_id}</p>
+                            <p>{comment.username}</p>
+                            <p>{comment.body}</p>
                             <p>Time & Date: {comment.created_at}</p>
                             <CommentVoter votes={comment.votes} article_id={article_id} comment_id={comment.comment_id} />
                             {

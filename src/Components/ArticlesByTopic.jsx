@@ -31,7 +31,12 @@ class ArticlesByTopic extends Component {
 
                         articles.map(article => {
                             const link = `/articles/${article.article_id}`
-                            return <li className='articlesListByTopic' key={article.created_at}><Link to={link}>{article.title}</Link></li>
+                            return <li className='articlesListByTopic' key={article.created_at}><Link to={link}><p className='title'>{article.title}</p>
+                                <p>Posted by <b>{article.author}</b></p>
+                                <p> into <b>{article.topic}</b></p>
+                                <p>Votes: {article.votes}</p>
+                            </Link>
+                            </li>
                         })
                     }
                     <Router>
