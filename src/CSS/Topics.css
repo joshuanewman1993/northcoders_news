@@ -1,51 +1,56 @@
-
-.topics{
+.topics {
     height: 100vh;
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    
 }
 
 .topicsItem {
-        color: white;
-        border: solid 1px black;;
-        border-radius: 15px;
-        transition: 1s;
-        width: 40%;
-        height: 40%;
-        margin: 0 auto;
-        background-color: rgba(25, 209, 148, 0.527);
-        font-size: 3rem;
-        padding: 1rem;
-        list-style: none;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 1rem;
-      }
+    color: white;
+    border: 2px solid blue;
+    background-color: rgba(2, 90, 204, 0.336);
+    border-radius: 15px;
+    transition: 1s;
+    width: 40%;
+    height: 40%;
+    margin: 0 auto;
+    font-size: 3rem;
+    padding: 1rem;
+    list-style: none;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+    transition: 1s;
+}
 
-.topicsItem:hover{
-      transform: scale(0.9);
-      background-color: rgba(103, 146, 135, 0.507);
-      }
+.topicsItem:hover {
+    transform: scale(0.9);
+    background-color: rgba(2, 90, 204, 0.336);
+}
 
-.topicsDiv > h3 {
-    color: black;
+.topicsDiv>h3 {
+    color: red;
     font-size: 3rem;
     font-style: italic;
 }
 
 .topicsItem p {
     margin: 1rem;
-    color:black;
+    color: black;
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+
+.topicsItem b {
+    color: red;
     text-decoration: none;
     font-size: 1.5rem;
 }
 
 .topicsItem a {
-    color:White;
+    color: White;
     text-decoration: none;
 }
 
@@ -63,10 +68,10 @@ select {
     font-size: 1rem;
     width: 10rem;
     height: 1rem;
-  }
+}
 
 @media(max-width: 900px) {
-    .topics{
+    .topics {
         flex-wrap: column;
     }
     .topicsItem {
@@ -77,6 +82,5 @@ select {
     .topicsItem p {
         margin: 1rem;
         font-size: 30%;
-
     }
-   }
+}

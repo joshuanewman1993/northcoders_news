@@ -34,8 +34,9 @@ class Articles extends Component {
                     </form>
                     <ul className='articlesUL'>
                         {
-                            articles.map(article => <li className='articleItem' key={article.article_id}><Link to={`${article.article_id}`}>{article.title}
-                                <p>Posted by {article.author} into {article.topic}</p>
+                            articles.map(article => <li className='articleItem' key={article.article_id}><Link to={`${article.article_id}`}><p className='atitle'>{article.title}</p>
+                                <p>Posted by <b>{article.author}</b></p>
+                                <p> into <b>{article.topic}</b></p>
                                 <p>Votes: {article.votes}</p>
                             </Link></li>)
                         }

@@ -1,8 +1,7 @@
-
-
 .Home h1 {
     font-style: italic;
     font-size: 2rem;
+    color: red;
 }
 
 .item {
@@ -22,18 +21,15 @@
     padding: 1rem;
     list-style: none;
     margin: 1rem;
-
-
 }
 
-.listItem:hover{
+/* .listItem:hover{
   transform: scale(0.9);
   background-color: rgba(103, 146, 135, 0.507);
-  }
+  } */
 
-  
-  @media(max-width: 900px) {
-    .listItem{
+@media(max-width: 900px) {
+    .listItem {
         width: 100%;
         margin: 0;
     }

@@ -29,10 +29,9 @@ class ArticlesByID extends Component {
 
             <div className='articleById'>
                 <h1>{title}</h1>
-                <p>Article ID: {article_id}</p>
-                <p>Author: {author}</p>
-                <p>Body : {body}</p>
-                <p>Topic : {topic}</p>
+                <p>{author}</p>
+                <p>{topic}</p>
+                <p>{body}</p>
                 <Voter votes={votes} article_id={article_id} />
 
 

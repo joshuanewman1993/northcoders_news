@@ -1,32 +1,30 @@
-.header{
+.header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 
 .left h1 {
-    font-size: 4.5rem;
-    font-style: italic;
-    color:black;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
-  }
+  font-size: 4.5rem;
+  font-style: italic;
+  color: red;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
 
 .right {
-border: 2px solid rgba(125, 230, 203, 0.61);
-padding: 1rem;
+  border: 2px solid rgba(125, 230, 203, 0.61);
+  padding: 1rem;
 }
 
 @media(max-width: 900px) {
   .header {
     display: flex;
     flex-direction: column;
-  } 
+  }
   .left h1 {
     font-size: 3rem;
     font-style: italic;
-    color:black;
+    color: black;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
   }
-
-  
 }

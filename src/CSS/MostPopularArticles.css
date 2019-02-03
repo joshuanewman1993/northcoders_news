@@ -3,21 +3,33 @@
     flex-wrap: wrap;
     align-content: center;
     justify-content: center;
-    }
-    
-    .popularItem {
-        width: 100%;
-        border: 1px solid black;
-        border-radius: 15px;
-        padding: 1rem;
-        background-color: rgba(25, 209, 148, 0.527);
-        margin: 1rem;
-        list-style: none;
-        
-    }
+}
 
-    @media(max-width: 900px) {
-        .popularItem {
-        }
-    }
-      
+.popularItem {
+    width: 100%;
+    border: 1px solid black;
+    border-radius: 15px;
+    padding: 1rem;
+    background-color: rgba(25, 209, 148, 0.527);
+    margin: 1rem;
+    list-style: none;
+    transition: 1s;
+}
+
+.articlesList {
+    border: 2px solid blue;
+    background-color: rgba(2, 90, 204, 0.336);
+}
+
+.articlesList:hover {
+    transform: scale(1);
+    background-color: rgba(2, 90, 204, 0.781);
+}
+
+.articlesList p {
+    color: black;
+}
+
+.articlesList b {
+    color: rgba(255, 0, 0, 0.651);
+}
