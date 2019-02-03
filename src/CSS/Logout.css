@@ -1,11 +1,10 @@
 .logout {
     padding-left: 2rem;
+    background-color: #060663;
 }
-
 
 @media(max-width: 900px) {
     .logout {
         margin-top: 1rem;
-    } 
-    
-  }
+    }
+}

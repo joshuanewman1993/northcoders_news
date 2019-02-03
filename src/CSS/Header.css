@@ -2,18 +2,18 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  background-color: #060663;
 }
 
 .left h1 {
   font-size: 4.5rem;
-  font-style: italic;
-  color: red;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+  color: white;
+  font-family: Perpetua Titling MT;
 }
 
 .right {
-  border: 2px solid rgba(125, 230, 203, 0.61);
   padding: 1rem;
+  color: white;
 }
 
 @media(max-width: 900px) {
@@ -23,8 +23,7 @@
   }
   .left h1 {
     font-size: 3rem;
-    font-style: italic;
-    color: black;
+    color: white;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
   }
 }

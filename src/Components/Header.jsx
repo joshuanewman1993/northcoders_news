@@ -4,7 +4,7 @@ import '../CSS/Header.css'
 const Header = (props) => {
     return (
         <div className='header'>
-            <div className='left'><h1>Northcoders News</h1></div>
+            <div className='left'><h1>NORTHCODERS NEWS</h1></div>
             <div className='right'>
                 <p>Welcome {props.user.name}</p>
                 <br></br>
