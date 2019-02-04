@@ -20,11 +20,11 @@ class CommentVoter extends Component {
             return <Error err={hasError} />
         }
         return (
-            <div>
+            <div className='commentsVoter'>
 
                 <button onClick={() => this.updateComment(1)} disabled={(commentVote > 0)}>Vote up</button>
                 <button onClick={() => this.updateComment(-1)} disabled={(commentVote < 0)}>Vote Down</button>
-                <p>{votes + commentVote}</p>
+                <p className='votes'>{votes + commentVote}</p>
             </div>
         );
     }

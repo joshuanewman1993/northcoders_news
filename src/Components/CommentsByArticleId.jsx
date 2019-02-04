@@ -14,6 +14,10 @@ class CommentsByArticleId extends Component {
     }
     render() {
         const { comments } = this.state
+        const { created_at } = this.state.comments
+        const event = new Date(created_at);
+        const jsonDate = event.toJSON();
+        const dateToShow = new Date(jsonDate).toUTCString()
         const { article_id, user, author } = this.props
         const { hasError } = this.state
         if (hasError) {
@@ -26,7 +30,8 @@ class CommentsByArticleId extends Component {
                         comments.map(comment => <li className='commentsList' key={comment.comment_id}>
                             <p>{comment.username}</p>
                             <p>{comment.body}</p>
-                            <p>Time & Date: {comment.created_at}</p>
+                            <p>
+                                {dateToShow}</p>
                             <CommentVoter votes={comment.votes} article_id={article_id} comment_id={comment.comment_id} />
                             {
                                 this.state.username === comment.username && <button onClick={() => this.handleDelete(comment.comment_id)} disabled={user.username !== comment.author} >Delete Comment</button>
