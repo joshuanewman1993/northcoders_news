@@ -12,14 +12,16 @@
 }
 
 .right {
-  padding: 1rem;
+  padding-right: 1rem;
   color: white;
 }
 
 @media(max-width: 900px) {
   .header {
-    display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
   }
   .left h1 {
     font-size: 3rem;
