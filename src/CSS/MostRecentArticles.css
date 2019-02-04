@@ -1,8 +1,8 @@
 .recentArticles {
-display: flex;
-flex-wrap: wrap;
-align-content: center;
-justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
 }
 
 .articlesList {
@@ -13,12 +13,11 @@ justify-content: center;
     background-color: rgba(25, 209, 148, 0.527);
     margin: 1rem;
     list-style: none;
-    
 }
 
 .title {
     font-size: 2rem;
-    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    font-family: medium-content-serif-font, Georgia, Cambria, "Times New Roman", Times, serif;
     font-style: italic;
 }
 

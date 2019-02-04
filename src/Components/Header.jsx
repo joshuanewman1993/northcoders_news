@@ -1,5 +1,6 @@
 import React from 'react';
 import '../CSS/Header.css'
+import Logout from './Logout';
 
 const Header = (props) => {
     return (
@@ -10,6 +11,7 @@ const Header = (props) => {
                 <br></br>
                 <p>Username: {props.user.username}</p>
                 <p></p>
+                <Logout logout={props.logout} />
             </div>
         </div >
     );

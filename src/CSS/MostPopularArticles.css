@@ -17,6 +17,7 @@
 }
 
 .articlesList {
+    font-family: medium-content-serif-font, Georgia, Cambria, "Times New Roman", Times, serif;
     border: 2px solid blue;
     background-color: rgba(2, 90, 204, 0.336);
 }
@@ -27,6 +28,7 @@
 }
 
 .articlesList p {
+    font-family: medium-content-serif-font, Georgia, Cambria, "Times New Roman", Times, serif;
     color: black;
 }
 

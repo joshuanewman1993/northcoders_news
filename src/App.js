@@ -28,8 +28,7 @@ class App extends Component {
     return (
       <div className="App">
         <Login login={this.login} user={user}>
-          <Header user={user} />
-          <Logout logout={this.logOut} />
+          <Header user={user} logout={this.logOut} />
           <Nav user={user} />
           <Router>
             <HomePage path='/' />
