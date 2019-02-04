@@ -1,5 +1,5 @@
 .topics {
-    height: 100vh;
+    height: 100%;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -76,6 +76,7 @@ select {
 @media(max-width: 900px) {
     .topics {
         flex-wrap: column;
+        height: 100%;
     }
     .topicsItem {
         margin: 1rem;
