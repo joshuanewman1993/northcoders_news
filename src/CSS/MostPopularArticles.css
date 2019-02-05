@@ -19,17 +19,17 @@
 .articlesList {
     font-family: medium-content-serif-font, Georgia, Cambria, "Times New Roman", Times, serif;
     border: 2px solid blue;
-    background-color: rgba(2, 90, 204, 0.336);
+    background-color: white;
+    transition: 1s;
 }
 
 .articlesList:hover {
-    transform: scale(1);
-    background-color: rgba(2, 90, 204, 0.781);
+    transform: scale(0.9);
 }
 
 .articlesList p {
     font-family: medium-content-serif-font, Georgia, Cambria, "Times New Roman", Times, serif;
-    color: black;
+    color: #060663;
 }
 
 .articlesList b {
