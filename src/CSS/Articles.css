@@ -13,7 +13,6 @@
 .articleItem {
     color: white;
     border: solid 1px black;
-    background-color: rgba(2, 90, 204, 0.336);
     border-radius: 15px;
     transition: 1s;
     width: 50%;
@@ -45,7 +44,7 @@
 .atitle {
     color: red;
     font-family: medium-content-serif-font, Georgia, Cambria, "Times New Roman", Times, serif;
-    font-size: 1rem;
+    font-size: 2rem;
 }
 
 #root>div>div>div:nth-child(4)>div>div>form {

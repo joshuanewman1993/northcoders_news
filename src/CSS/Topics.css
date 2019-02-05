@@ -10,7 +10,6 @@
 .topicsItem {
     color: white;
     border: 2px solid blue;
-    background-color: rgba(2, 90, 204, 0.336);
     border-radius: 15px;
     transition: 1s;
     width: 40%;
@@ -27,7 +26,6 @@
 
 .topicsItem:hover {
     transform: scale(0.9);
-    background-color: rgba(2, 90, 204, 0.336);
 }
 
 .topicsDiv>h3 {

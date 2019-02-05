@@ -13,10 +13,10 @@
 
 .articleById>button {
     align-content: center;
-    font-size: 1.5rem;
-    color: black;
+    font-size: 0.6rem;
+    color: white;
     text-transform: uppercase;
-    background-color: rgba(2, 90, 204, 0.336);
+    background-color: #060663;
     padding: 1rem;
     border-radius: 1rem;
     display: inline-block;
