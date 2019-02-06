@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import * as api from '../Utils/api'
 import '../CSS/MostRecentArticles.css';
 import Articles from './Articles';
+import { Link } from '@reach/router'
 
 class MostRecentArticles extends Component {
     state = {
@@ -15,9 +16,12 @@ class MostRecentArticles extends Component {
             <ul className='recentArticles'>
                 {
                     articles.map(article => <li className='articlesList' key={article.article_id}>
-                        <p className='title'>{article.title}</p>
-                        <p>Posted into <b> {article.topic}</b></p>
-                        <p>By <b>{article.author}</b></p>
+                        <Link to={`articles/${article.article_id}`}>
+
+                            <p className='title'>{article.title}</p>
+                            <p>Posted into <b> {article.topic}</b></p>
+                            <p>By <b>{article.author}</b></p>
+                        </Link>
                     </li>)
                 }
             </ul>
