@@ -19,7 +19,7 @@ class Login extends Component {
             <> {this.props.children}</>
             : (
                 < div className='login' >
-                    <h1>Welcome to Northcoders News</h1>
+                    <h1 className='loginTitle'>Welcome to Northcoders News</h1>
                     <div className='form'>
                         <form onSubmit={this.handleSubmit}>
                             <select value={this.state.username} onChange={this.handleChange}>
@@ -28,7 +28,7 @@ class Login extends Component {
                                 }
                             </select>
                             <br></br>
-                            <button>Submit</button>
+                            <button className='loginButton'>Submit</button>
                         </form >
 
                     </div>
