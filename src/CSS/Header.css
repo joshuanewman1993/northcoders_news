@@ -3,6 +3,7 @@
   flex-direction: row;
   justify-content: space-between;
   background-color: #060663;
+  border-top: solid 4px red;
 }
 
 .logo {

@@ -22,10 +22,10 @@ class Articles extends Component {
         return (
             <div >
                 <h3>The latest trending articles...</h3>
-                <Link to='/add-article'>Click here if you wish to add an article!</Link>
+                <Link to='/add-article'><p className='addArticleText'>Click here if you wish to add an article!</p></Link>
                 <div className='articles'>
                     <form onSubmit={this.handleSubmit}>
-                        <label>Sort the articles by:
+                        <label className='filterLabel'>Sort the articles by:
                     <select value={this.state.value} onChange={this.handleChange}>
                                 <option value='created_at'>Date Created</option>
                                 <option value='votes'>Votes</option>

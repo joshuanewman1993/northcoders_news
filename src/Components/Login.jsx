@@ -24,7 +24,15 @@ class Login extends Component {
                     <h1 className='loginTitle'>Welcome to Northcoders News</h1>
                     <div className='form'>
                         <form onSubmit={this.handleSubmit}>
-                            <select value={this.state.username} onChange={this.handleChange}>
+                            <select
+                                className='dropdownTopics'
+                                required
+                                value={this.state.username}
+                                onChange={this.handleChange}
+                                clearable={false}
+                            >
+                                <option value=""> Please select a user</option>
+
                                 {
                                     users.map(user => <option value={user.username}>{user.username}</option>)
                                 }

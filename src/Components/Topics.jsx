@@ -22,7 +22,7 @@ class Topics extends Component {
         return (
             <div className='topicsDiv'>
                 <h3>The latest trending topics...</h3>
-                <Link to='/add-topic'><h4>Click here if you wish to add a topic!</h4></Link>
+                <Link to='/add-topic'><p className='addTopicText'>Click here if you wish to add a topic!</p></Link>
                 <br></br>
                 <ul className='topics'>
                     {

@@ -8,14 +8,14 @@
     justify-content: center;
 }
 
-.input {
-    width: 40rem;
-}
-
 .loginTitle {
     font-size: 3rem;
     color: red;
     font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif!important;
+}
+
+.dropdownTopics {
+    width: 14rem;
 }
 
 .loginButton {

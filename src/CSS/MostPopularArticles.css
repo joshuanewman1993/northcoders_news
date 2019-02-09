@@ -33,6 +33,10 @@
     color: #060663;
 }
 
+.articlesList a {
+    text-decoration: none;
+}
+
 .articlesList b {
     text-decoration: none;
     color: rgba(255, 0, 0, 0.651);

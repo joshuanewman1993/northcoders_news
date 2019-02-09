@@ -40,8 +40,18 @@
     text-decoration: none;
 }
 
+.addArticleText {
+    text-decoration: none;
+    font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif!important;
+    font-size: 1rem;
+}
+
+.filterLabel {
+    font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif!important;
+}
+
 .atitle {
-    color: red;
+    color: #060663;
     font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif!important;
     font-size: 2rem;
 }
