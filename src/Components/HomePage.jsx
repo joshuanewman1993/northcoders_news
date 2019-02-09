@@ -14,11 +14,11 @@ const HomePage = () => {
             <ul className='item'>
 
                 <li className='listItem'>
-                    <h2>Trending</h2>
+                    <h2>Trending Articles</h2>
                     <MostRecentArticles />
                 </li>
                 <li className='listItem'>
-                    <h2>Most Popular</h2>
+                    <h2>Most Popular Articles</h2>
                     <MostPopularArticles />
                 </li>
             </ul>

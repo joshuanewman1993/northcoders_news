@@ -3,7 +3,7 @@ import * as api from '../Utils/api';
 import up from '../images/thumbsup.png';
 import down from '../images/thumbsdown.jpg';
 import Error from './Error'
-
+import '../CSS/thumb.css';
 
 class CommentVoter extends Component {
     state = {
@@ -22,8 +22,16 @@ class CommentVoter extends Component {
         return (
             <div className='commentsVoter'>
 
-                <button onClick={() => this.updateComment(1)} disabled={(commentVote > 0)}>Vote up</button>
-                <button onClick={() => this.updateComment(-1)} disabled={(commentVote < 0)}>Vote Down</button>
+                <button onClick={() => this.updateComment(1)} disabled={(commentVote > 0)}> <img
+                    src={up}
+                    className='thumb'
+                    alt="thumb down"
+                /></button>
+                <button onClick={() => this.updateComment(-1)} disabled={(commentVote < 0)}><img
+                    src={down}
+                    className='thumb'
+                    alt="thumb down"
+                /></button>
                 <p className='votes'>{votes + commentVote}</p>
             </div>
         );

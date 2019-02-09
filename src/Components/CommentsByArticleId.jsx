@@ -34,7 +34,7 @@ class CommentsByArticleId extends Component {
                                 {dateToShow}</p>
                             <CommentVoter votes={comment.votes} article_id={article_id} comment_id={comment.comment_id} />
                             {
-                                this.state.username === comment.username && <button onClick={() => this.handleDelete(comment.comment_id)} disabled={user.username !== comment.author} >Delete Comment</button>
+                                this.state.username === comment.username && <button onClick={() => this.handleDelete(comment.comment_id)} className='deleteCommentButton' disabled={user.username === comment.author}>Delete Comment</button>
                             }
                         </li>)
                     }
@@ -43,7 +43,7 @@ class CommentsByArticleId extends Component {
                     <label htmlFor='body' ><h2>Body</h2></label>
                     <textarea id='body' type='text' value={this.state.body} onChange={this.handleChange} required ></textarea>
 
-                    <button type='submit'>Add Comment</button>
+                    <button type='submit' className='addCommentButton'>Add Comment</button>
                 </form>
             </div >
         );

@@ -19,8 +19,16 @@ class Voter extends Component {
         }
         return (
             <div className='articleVoter'>
-                <button onClick={() => this.updateVote(1)} disabled={(voteChange > 0)}>Votes up</button>
-                <button onClick={() => this.updateVote(-1)} disabled={(voteChange < 0)}>Vote Down</button>
+                <button onClick={() => this.updateVote(1)} disabled={(voteChange > 0)}><img
+                    src={up}
+                    className='thumb'
+                    alt="thumb down"
+                /></button>
+                <button onClick={() => this.updateVote(-1)} disabled={(voteChange < 0)}><img
+                    src={down}
+                    className='thumb'
+                    alt="thumb down"
+                /></button>
                 <p className='votes'>{votes + voteChange}</p>
             </div >
 

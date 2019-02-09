@@ -5,10 +5,18 @@
   background-color: #060663;
 }
 
+.logo {
+  width: 3rem;
+  height: 3rem;
+  padding-right: 1rem;
+}
+
 .left h1 {
-  font-size: 4.5rem;
+  padding-top: 1rem;
+  padding-left: 20rem;
+  font-size: 3rem;
   color: white;
-  font-family: Perpetua Titling MT;
+  font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif!important;
 }
 
 .right {

@@ -18,7 +18,8 @@
 .title {
     font-size: 2rem;
     font-family: medium-content-serif-font, Georgia, Cambria, "Times New Roman", Times, serif;
-    font-style: italic;
+    text-decoration: none;
+    list-style: none;
 }
 
 @media(max-width: 900px) {

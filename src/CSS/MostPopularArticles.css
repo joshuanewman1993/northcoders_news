@@ -18,7 +18,7 @@
 
 .articlesList {
     font-family: medium-content-serif-font, Georgia, Cambria, "Times New Roman", Times, serif;
-    border: 2px solid blue;
+    border: 2px solid #060663;
     background-color: white;
     transition: 1s;
 }
@@ -28,10 +28,12 @@
 }
 
 .articlesList p {
-    font-family: medium-content-serif-font, Georgia, Cambria, "Times New Roman", Times, serif;
+    font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif!important;
+    font-style: normal;
     color: #060663;
 }
 
 .articlesList b {
+    text-decoration: none;
     color: rgba(255, 0, 0, 0.651);
 }

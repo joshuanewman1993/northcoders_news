@@ -7,7 +7,7 @@
 }
 
 .articleById p {
-    font-family: medium-content-serif-font, Georgia, Cambria, "Times New Roman", Times, serif;
+    font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif!important;
     letter-spacing: .01rem;
 }
 

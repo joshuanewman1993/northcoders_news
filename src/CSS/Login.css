@@ -12,11 +12,12 @@
     width: 40rem;
 }
 
+/* 
 h1 {
     font-size: 3rem;
     color: black;
-    font-family: medium-content-serif-font, Georgia, Cambria, "Times New Roman", Times, serif;
-}
+    font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif!important;
+} */
 
 .button {
     width: 4rem;

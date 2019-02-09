@@ -1,6 +1,7 @@
 .Home h1 {
     font-size: 2rem;
     color: red;
+    font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif!important;
 }
 
 .item {

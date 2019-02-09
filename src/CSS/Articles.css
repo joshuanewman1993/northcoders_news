@@ -12,11 +12,11 @@
 
 .articleItem {
     color: white;
-    border: solid 1px black;
+    border: solid 2px #060663;
     border-radius: 15px;
     transition: 1s;
-    width: 50%;
-    height: 40%;
+    width: 60%;
+    height: 45%;
     margin: 0 auto;
     padding: 1rem;
     list-style: none;
@@ -28,7 +28,6 @@
 
 .articleItem:hover {
     transform: scale(0.9);
-    background-color: rgba(2, 90, 204, 0.336);
 }
 
 .articleItem a {
@@ -43,7 +42,7 @@
 
 .atitle {
     color: red;
-    font-family: medium-content-serif-font, Georgia, Cambria, "Times New Roman", Times, serif;
+    font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif!important;
     font-size: 2rem;
 }
 
@@ -52,9 +51,10 @@
 }
 
 h3 {
-    font-family: medium-content-serif-font, Georgia, Cambria, "Times New Roman", Times, serif;
-    font-size: 3rem;
+    font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif!important;
     color: red;
+    font-size: 2rem;
+    font-style: normal;
 }
 
 @media(max-width: 900px) {
