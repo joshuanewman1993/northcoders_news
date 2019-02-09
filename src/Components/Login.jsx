@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import '../CSS/Login.css'
 import * as api from '../Utils/api';
 import Users from './Users';
+import logo from '../images/logo.png'
 
 
 class Login extends Component {
@@ -19,6 +20,7 @@ class Login extends Component {
             <> {this.props.children}</>
             : (
                 < div className='login' >
+                    <img src={logo} className='logo'></img>
                     <h1 className='loginTitle'>Welcome to Northcoders News</h1>
                     <div className='form'>
                         <form onSubmit={this.handleSubmit}>
