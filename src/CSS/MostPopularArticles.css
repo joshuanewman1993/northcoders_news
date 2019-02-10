@@ -10,7 +10,6 @@
     border: 1px solid black;
     border-radius: 15px;
     padding: 1rem;
-    background-color: rgba(25, 209, 148, 0.527);
     margin: 1rem;
     list-style: none;
     transition: 1s;
@@ -39,5 +38,5 @@
 
 .articlesList b {
     text-decoration: none;
-    color: rgba(255, 0, 0, 0.651);
+    color: red;
 }
