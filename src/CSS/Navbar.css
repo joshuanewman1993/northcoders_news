@@ -23,6 +23,10 @@
   justify-content: right;
 }
 
+.logoutButton {
+  align-content: right;
+}
+
 @media(max-width: 900px) {
   .navbar {
     display: flex;

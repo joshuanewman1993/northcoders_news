@@ -4,14 +4,12 @@
 }
 
 .App {
-  background-color: white;
-  height: 100vh;
+  background-color: rgba(201, 196, 196, 0.281);
+  height: 100%;
   width: auto;
   margin: 0;
-  
 }
+
 .inner {
   padding-left: 3rem;
 }
-
-

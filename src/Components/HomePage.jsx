@@ -10,15 +10,15 @@ import MostPopularArticles from './MostPopularArticles';
 const HomePage = () => {
     return (
         <div className='Home'>
-            <h1>Welcome to <b>NFC news</b>, a place where words matter. </h1>
+            <h1>Welcome to <b>NCN news</b>, a place where words matter. </h1>
             <ul className='item'>
 
                 <li className='listItem'>
-                    <h2>Trending Articles</h2>
+                    <h2 className='homeHeader'>Trending Articles</h2>
                     <MostRecentArticles />
                 </li>
                 <li className='listItem'>
-                    <h2>Most Popular Articles</h2>
+                    <h2 className='homeHeader'>Most Popular Articles</h2>
                     <MostPopularArticles />
                 </li>
             </ul>

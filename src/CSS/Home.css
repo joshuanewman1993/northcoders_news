@@ -1,5 +1,5 @@
 .Home h1 {
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: red;
     font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif!important;
 }
@@ -21,6 +21,13 @@
     padding: 1rem;
     list-style: none;
     margin: 1rem;
+}
+
+.homeHeader {
+    font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif!important;
+    color: #060666;
+    border-bottom: solid 1.5px #060666;
+    ;
 }
 
 /* .listItem:hover{

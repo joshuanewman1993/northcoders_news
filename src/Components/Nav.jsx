@@ -18,7 +18,7 @@ const Nav = (props) => {
 
             <Link className='nav' to='/add-topic' >Add Topic</Link>
 
-            <Logout logout={props.logout} />
+            <Logout logout={props.logout} className='logout' />
 
         </nav>
     );

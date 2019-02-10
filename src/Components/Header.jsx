@@ -9,8 +9,8 @@ const Header = (props) => {
             <div className='left'><h1> <img src={logo} className='logo'></img>Northcoders News</h1></div>
             <div className='right'>
                 <p>Welcome {props.user.name}</p>
-                <br></br>
                 <p>Username: {props.user.username}</p>
+                <br></br>
             </div>
         </div >
     );

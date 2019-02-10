@@ -1,7 +1,7 @@
 .articlesUL {
     margin: 0;
     padding: 0;
-    height: 68vh;
+    height: 100%;
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -12,6 +12,7 @@
 
 .articleItem {
     color: white;
+    background-color: white;
     border: solid 2px #060663;
     border-radius: 15px;
     transition: 1s;
