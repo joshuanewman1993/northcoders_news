@@ -29,7 +29,7 @@ class App extends Component {
       <div className="App">
         <Login login={this.login} user={user}>
           <Header user={user} logout={this.logOut} />
-          <Nav user={user} />
+          <Nav user={user} logout={this.logOut} />
           <Router>
             <HomePage path='/' />
             <Topics path='/topics/*' />

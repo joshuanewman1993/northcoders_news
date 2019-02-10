@@ -1,8 +1,9 @@
 import React from 'react';
 import { Link } from '@reach/router'
 import '../CSS/Navbar.css'
-
-const Nav = ({ user }) => {
+import Logout from './Logout'
+const Nav = (props) => {
+    console.log(props)
     return (
         <nav className='navbar'>
             <Link className='nav' to='/'>Home</Link>
@@ -16,6 +17,8 @@ const Nav = ({ user }) => {
             <Link className='nav' to='/add-article' >Add Article</Link>
 
             <Link className='nav' to='/add-topic' >Add Topic</Link>
+
+            <Logout logout={props.logout} />
 
         </nav>
     );

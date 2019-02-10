@@ -11,8 +11,6 @@ const Header = (props) => {
                 <p>Welcome {props.user.name}</p>
                 <br></br>
                 <p>Username: {props.user.username}</p>
-                <p></p>
-                <Logout logout={props.logout} />
             </div>
         </div >
     );
