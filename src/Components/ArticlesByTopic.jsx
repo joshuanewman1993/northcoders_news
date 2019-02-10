@@ -34,7 +34,6 @@ class ArticlesByTopic extends Component {
                             return <li className='articlesListByTopic' key={article.created_at}><Link to={link}><p className='title'>{article.title}</p>
                                 <p>Posted by <b>{article.author}</b></p>
                                 <p> into <b>{article.topic}</b></p>
-                                <p>Votes: {article.votes}</p>
                             </Link>
                             </li>
                         })

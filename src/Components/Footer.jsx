@@ -1,10 +1,12 @@
 import React from 'react';
 import '../CSS/Footer.css'
+import linkedIn from '../images/linkndIn.png'
+import { link } from 'fs';
 
 const Footer = () => {
     return (
         <div className='footer'>
-            © Joshua Newman 2019
+            <p> © Joshua Newman 2019  | <a href='https://github.com/joshuanewman1993' className='footerlink'> GitHub Profile</a> | <a href='https://www.linkedin.com/in/joshua-newman-67988b109/' className='footerlink'>Linkedin Profile</a></p>
         </div>
     );
 }

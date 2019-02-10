@@ -19,9 +19,8 @@ class MostPopularArticles extends Component {
                         <Link to={`articles/${article.article_id}`}>
                             <a><p className='title'>{article.title}</p></a>
                             <p>Posted into <b>{article.topic}</b></p>
-                            <p>By <b>{article.author}</b></p>
-                            <p><b>Votes: </b>{article.votes}</p>
-                            <p><b>{Math.floor(Math.random() * 100) + 1} </b>min read </p>
+                            <p>Votes: <b>{article.votes}</b> </p>
+                            <p>By <b>{article.author}</b> | <b>{Math.floor(Math.random() * 100) + 1} </b>min read </p>
                         </Link>
                     </li>
                     )

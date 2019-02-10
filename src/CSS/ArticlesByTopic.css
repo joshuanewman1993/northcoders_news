@@ -1,7 +1,6 @@
 .articlesByTopic {
     margin: 0;
     padding: 0;
-    height: 68vh;
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -25,28 +24,18 @@
     margin: 1rem;
 }
 
-.articlesListByTopic:hover {
-    transform: scale(0.9);
-    background-color: rgba(2, 90, 204, 0.336);
-}
-
 .articlesByTopic b {
     color: red;
     text-decoration: none;
 }
 
 .articlesByTopic a {
-    color: black;
+    color: #060663;
     text-decoration: none;
 }
 
-/* h3 {
-    font-size: 3rem;
-    font-style: italic;
-} */
-
 .title {
-    color: red;
+    font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif!important;
+    color: #060663;
     font-size: 2rem;
-    font-style: italic;
 }
