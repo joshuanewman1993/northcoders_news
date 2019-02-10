@@ -10,7 +10,7 @@
 
 .articlesListByTopic {
     color: white;
-    border: solid 1px black;
+    border: solid 2px #060663;
     border-radius: 15px;
     transition: 1s;
     width: 50%;
