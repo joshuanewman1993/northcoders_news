@@ -21,6 +21,8 @@ class MostRecentArticles extends Component {
                             <p className='title'>{article.title}</p>
                             <p>Posted into <b> {article.topic}</b></p>
                             <p>By <b>{article.author}</b></p>
+                            <p><b>{Math.floor(Math.random() * 100) + 1} </b>min read </p>
+
                         </Link>
                     </li>)
                 }

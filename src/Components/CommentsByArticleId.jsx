@@ -3,7 +3,9 @@ import * as api from '../Utils/api'
 import CommentVoter from './CommentVoter';
 import '../CSS/Comments.css'
 import Error from './Error'
-import { isNullOrUndefined } from 'util';
+import moment from 'moment';
+
+
 
 class CommentsByArticleId extends Component {
     state = {
@@ -15,9 +17,6 @@ class CommentsByArticleId extends Component {
     render() {
         const { comments } = this.state
         const { created_at } = this.state.comments
-        const event = new Date(created_at);
-        const jsonDate = event.toJSON();
-        const dateToShow = new Date(jsonDate).toUTCString()
         const { article_id, user, author } = this.props
         const { hasError } = this.state
         if (hasError) {
@@ -30,8 +29,8 @@ class CommentsByArticleId extends Component {
                         comments.map(comment => <li className='commentsList' key={comment.comment_id}>
                             <p>{comment.username}</p>
                             <p>{comment.body}</p>
-                            <p>
-                                {dateToShow}</p>
+                            <p>{moment().format('LLLL')}</p>
+                            <br></br>
                             <CommentVoter votes={comment.votes} article_id={article_id} comment_id={comment.comment_id} />
                             {
                                 this.state.username === comment.username && <button onClick={() => this.handleDelete(comment.comment_id)} className='deleteCommentButton' disabled={user.username === comment.author}>Delete Comment</button>

@@ -21,6 +21,7 @@ class MostPopularArticles extends Component {
                             <p>Posted into <b>{article.topic}</b></p>
                             <p>By <b>{article.author}</b></p>
                             <p><b>Votes: </b>{article.votes}</p>
+                            <p><b>{Math.floor(Math.random() * 100) + 1} </b>min read </p>
                         </Link>
                     </li>
                     )

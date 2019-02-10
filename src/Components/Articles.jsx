@@ -38,6 +38,8 @@ class Articles extends Component {
                                 <p>Posted by <b>{article.author}</b></p>
                                 <p> into <b>{article.topic}</b></p>
                                 <p>Votes: {article.votes}</p>
+                                <p><b>{Math.floor(Math.random() * 100) + 1} </b>min read </p>
+
                             </Link></li>)
                         }
                     </ul>
