@@ -10,7 +10,7 @@ import MostPopularArticles from './MostPopularArticles';
 const HomePage = () => {
     return (
         <div className='Home'>
-            <h1>Welcome to <b>NCN news</b>, a place where words matter. </h1>
+            <h1>Welcome to <b>NC news</b>, a place where words matter. </h1>
             <ul className='item'>
 
                 <li className='listItem'>

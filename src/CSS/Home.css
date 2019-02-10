@@ -27,7 +27,7 @@
     font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif!important;
     color: #060666;
     border-bottom: solid 1.5px #060666;
-    ;
+    font-weight: bold;
 }
 
 /* .listItem:hover{
