@@ -1,7 +1,7 @@
 .users {
     margin: 0;
     padding-top: 2rem;
-    height: 68vh;
+    height: 100%;
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -12,6 +12,7 @@
 .usersList {
     height: 40%;
     width: 25%;
+    background-color: white;
     border: solid 1px black;
     border-radius: 15px;
     transition: 1s;
@@ -19,21 +20,20 @@
     display: flex;
     list-style: none;
     align-items: center;
-flex-direction: column;
+    flex-direction: column;
     margin: 1rem;
-
 }
 
-.usersList:hover{
-  transform: scale(0.9);
-  background-color: rgba(103, 146, 135, 0.507);
-  }
+.usersList:hover {
+    transform: scale(0.9);
+    background-color: rgba(103, 146, 135, 0.507);
+}
 
- p {
-      margin-top: 1rem;
-  }
+p {
+    margin-top: 1rem;
+}
 
-  @media(max-width: 900px) {
+@media(max-width: 900px) {
     .usersList {
         height: 30%;
         width: 40%;
@@ -42,9 +42,8 @@ flex-direction: column;
         transition: 1s;
         padding: 2rem;
         list-style: none;
-    }    
+    }
     .usersList p {
         font-size: 50%;
-    }    
-
+    }
 }

@@ -10,9 +10,8 @@ form {
 
 h2 {
     padding-bottom: 1rem;
-    ;
+    font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif!important;
     margin-bottom: 1rem;
-    font-family: medium-content-serif-font, Georgia, Cambria, "Times New Roman", Times, serif;
     font-weight: 100;
     text-align: center;
     color: black;
@@ -44,7 +43,6 @@ input[type="password"], textarea {
     align-content: center;
     font-size: 1.5rem;
     color: white;
-    text-transform: uppercase;
     background-color: #060666;
     padding: 1rem;
     border-radius: 1rem;
