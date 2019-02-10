@@ -26,9 +26,9 @@ In your terminal, run the following commands from the project root:
 
 `git clone - https://github.com/joshuanewman1993/northcoders_news`
 
-`cd northcoders_news - Access the folder file`
+`cd northcoders_news`
 
-`npm install - Install all dependencies needed`
+`npm install`
 
 ## Running the application
 
