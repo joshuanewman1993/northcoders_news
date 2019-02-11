@@ -21,19 +21,28 @@
 
 .right {
   padding-right: 1rem;
+  padding-left: 1rem;
   color: white;
 }
 
 @media(max-width: 900px) {
   .header {
+    display: flex;
     flex-direction: column;
-    justify-content: center;
+    display: flex;
     align-content: center;
     align-items: center;
   }
   .left h1 {
+    align-content: center;
+    align-items: center;
+    padding-left: 3rem;
+    display: flex;
     font-size: 3rem;
     color: white;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+  }
+  .right {
+    border-bottom: 1px solid white;
   }
 }

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import * as api from '../Utils/api';
 import up from '../images/thumbsup.png';
-import down from '../images/thumbsdown.jpg';
+import down from '../images/thumbsdown.png';
 import Error from './Error'
 import '../CSS/ArticleVoter.css'
 
@@ -19,12 +19,12 @@ class Voter extends Component {
         }
         return (
             <div className='articleVoter'>
-                <button onClick={() => this.updateVote(1)} disabled={(voteChange > 0)}><img
+                <button className='buttonThumb' onClick={() => this.updateVote(1)} disabled={(voteChange > 0)}><img
                     src={up}
                     className='thumb'
                     alt="thumb down"
                 /></button>
-                <button onClick={() => this.updateVote(-1)} disabled={(voteChange < 0)}><img
+                <button className='buttonThumb' onClick={() => this.updateVote(-1)} disabled={(voteChange < 0)}><img
                     src={down}
                     className='thumb'
                     alt="thumb down"

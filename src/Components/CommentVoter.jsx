@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import * as api from '../Utils/api';
 import up from '../images/thumbsup.png';
-import down from '../images/thumbsdown.jpg';
+import down from '../images/thumbsdown.png';
 import Error from './Error'
 import '../CSS/thumb.css';
 
@@ -22,12 +22,12 @@ class CommentVoter extends Component {
         return (
             <div className='commentsVoter'>
 
-                <button onClick={() => this.updateComment(1)} disabled={(commentVote > 0)}> <img
+                <button className='buttonThumb' onClick={() => this.updateComment(1)} disabled={(commentVote > 0)}> <img
                     src={up}
                     className='thumb'
-                    alt="thumb down"
+                    alt="thumb up"
                 /></button>
-                <button onClick={() => this.updateComment(-1)} disabled={(commentVote < 0)}><img
+                <button className='buttonThumb' onClick={() => this.updateComment(-1)} disabled={(commentVote < 0)}><img
                     src={down}
                     className='thumb'
                     alt="thumb down"
