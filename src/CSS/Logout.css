@@ -20,6 +20,10 @@
 
 @media(max-width: 900px) {
     .logout {
-        margin-top: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-right: 5.3rem;
     }
 }

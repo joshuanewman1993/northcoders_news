@@ -3,7 +3,6 @@ import { Link } from '@reach/router'
 import '../CSS/Navbar.css'
 import Logout from './Logout'
 const Nav = (props) => {
-    console.log(props)
     return (
         <nav className='navbar'>
             <Link className='nav' to='/'>Home</Link>
