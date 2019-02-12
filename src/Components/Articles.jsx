@@ -26,7 +26,7 @@ class Articles extends Component {
                 <div className='articles'>
                     <form onSubmit={this.handleSubmit}>
                         <label className='filterLabel'>Sort the articles by:
-                    <select value={this.state.value} onChange={this.handleChange}>
+                    <select className='articleSortBySelect' value={this.state.value} onChange={this.handleChange}>
                                 <option value='created_at'>Date Created</option>
                                 <option value='votes'>Votes</option>
                             </select>
