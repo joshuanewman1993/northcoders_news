@@ -68,6 +68,10 @@ h3 {
     font-style: normal;
 }
 
+.articleSortBySelect {
+    width: 9rem;
+}
+
 @media(max-width: 900px) {
     .articleItem {
         width: 80%;
