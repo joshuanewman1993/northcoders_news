@@ -1,7 +1,5 @@
 import React from 'react';
 import '../CSS/Footer.css'
-import linkedIn from '../images/linkndIn.png'
-import { link } from 'fs';
 
 const Footer = () => {
     return (
