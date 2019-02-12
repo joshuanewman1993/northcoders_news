@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import '../CSS/Login.css'
 import * as api from '../Utils/api';
-import Users from './Users';
 import logo from '../images/logo.png'
 
 
@@ -11,7 +10,7 @@ class Login extends Component {
         users: []
     }
     render() {
-        const { username, users } = this.state;
+        const { users } = this.state;
 
         const { user } = this.props;
         const loggedIn = user.hasOwnProperty('username')
@@ -20,7 +19,7 @@ class Login extends Component {
             <> {this.props.children}</>
             : (
                 < div className='login' >
-                    <img src={logo} className='logo'></img>
+                    <img src={logo} className='logo' alt='NClogo'></img>
                     <h1 className='loginTitle'>Welcome to Northcoders News</h1>
                     <div className='form'>
                         <form onSubmit={this.handleSubmit}>

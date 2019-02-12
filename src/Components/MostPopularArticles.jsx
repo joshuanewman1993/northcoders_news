@@ -17,7 +17,7 @@ class MostPopularArticles extends Component {
                 {
                     articles.map(article => <li className='articlesList' key={article.article_id}>
                         <Link to={`articles/${article.article_id}`}>
-                            <a><p className='title'>{article.title}</p></a>
+                            <p className='title'>{article.title}</p>
                             <p>Posted into <b>{article.topic}</b></p>
                             <p>Votes: <b>{article.votes}</b> </p>
                             <p>By <b>{article.author}</b> | <b>{Math.floor(Math.random() * 100) + 1} </b>min read </p>

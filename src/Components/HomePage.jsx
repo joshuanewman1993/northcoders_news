@@ -1,6 +1,5 @@
 import React from 'react';
 import '../CSS/Home.css';
-import { Link } from '@reach/router'
 import MostRecentArticles from './MostRecentArticles';
 import MostPopularArticles from './MostPopularArticles';
 

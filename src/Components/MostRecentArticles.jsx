@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import * as api from '../Utils/api'
 import '../CSS/MostRecentArticles.css';
-import Articles from './Articles';
 import { Link } from '@reach/router'
 
 class MostRecentArticles extends Component {
