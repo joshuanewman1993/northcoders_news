@@ -15,7 +15,6 @@ class AddArticle extends Component {
         topics: []
     }
     render() {
-        const { user } = this.props
 
         const { hasError, topics } = this.state
         if (hasError) {
@@ -32,6 +31,8 @@ class AddArticle extends Component {
                     <label htmlFor='topic' ><h2>Topic</h2></label>
 
                     <select className='topicSelect' value={this.state.topic} onChange={this.handleTopicSelect} required >
+                        <option value=""> Please select a topic...</option>
+
                         {
                             topics.map(topic => <option value={topic.slug}>{topic.slug}</option>)
                         }
@@ -74,7 +75,7 @@ class AddArticle extends Component {
                     topic: '',
                     toPage: !toPage
                 }))
-            .then(() => navigate('/articles/added'))
+            .then(() => navigate('/topics'))
             .catch(err => this.setState({
                 hasError: err
             }))

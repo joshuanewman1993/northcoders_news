@@ -12,7 +12,7 @@ class AddTopic extends Component {
         topics: []
     }
     render() {
-        const { hasError, topics } = this.state
+        const { hasError } = this.state
         if (hasError) {
             return <Error err={hasError} />
         }
