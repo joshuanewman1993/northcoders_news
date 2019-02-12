@@ -11,7 +11,6 @@ import ArticlesById from './Components/ArticlesById';
 import Login from './Components/Login';
 import * as api from './Utils/api'
 import DeletedArticle from './Components/DeletedArticle';
-import Logout from './Components/Logout';
 import AddArticle from './Components/AddArticle';
 import HomePage from './Components/HomePage';
 import AddTopic from './Components/AddTopic';
@@ -72,7 +71,6 @@ class App extends Component {
   }
 
   logOut = (event) => {
-    console.log(event)
     localStorage.clear()
     this.setState({
       user: {}
