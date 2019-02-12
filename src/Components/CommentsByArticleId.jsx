@@ -16,8 +16,7 @@ class CommentsByArticleId extends Component {
     }
     render() {
         const { comments } = this.state
-        const { created_at } = this.state.comments
-        const { article_id, user, author } = this.props
+        const { article_id, user } = this.props
         const { hasError } = this.state
         if (hasError) {
             return <Error err={hasError} />
